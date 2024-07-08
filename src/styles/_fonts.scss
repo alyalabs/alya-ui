@@ -1,0 +1,37 @@
+@use 'utilities';
+
+$font-primary: 'DM Sans', sans-serif;
+$font-secondary: 'myriad-pro', 'Myriad Pro', sans-serif;
+
+$font-size-12: utilities.to-rem(12px);
+$font-size-14: utilities.to-rem(14px);
+$font-size-16: utilities.to-rem(16px);
+$font-size-18: utilities.to-rem(18px);
+$font-size-20: utilities.to-rem(20px);
+$font-size-24: utilities.to-rem(24px);
+$font-size-28: utilities.to-rem(28px);
+
+$font-size-32: utilities.to-rem(32px);
+$font-size-40: utilities.to-rem(40px);
+$font-size-48: utilities.to-rem(48px);
+$font-size-52: utilities.to-rem(52px);
+$font-size-60: utilities.to-rem(60px);
+$font-size-68: utilities.to-rem(68px);
+$font-size-76: utilities.to-rem(76px);
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$font-line-height-xs: 1em;
+$font-line-height-sm: 1.1em;
+$font-line-height-md: 1.2em;
+$font-line-height-lg: 1.4em;
+$font-line-height-xl: 1.8em;
+
+$font-letter-spacing-xs: -0.04em;
+$font-letter-spacing-sm: -0.02em;
+$font-letter-spacing-md: 0.08em;
+$font-letter-spacing-lg: 0.12em;
+$font-letter-spacing-xl: 0.16em;

@@ -1,0 +1,120 @@
+@use '../colors';
+@use '../layers';
+@use '../fonts';
+
+$action-btn-text-font: fonts.$font-primary;
+
+$action-btn-one-text-color: colors.$color-gray-600;
+$action-btn-one-bg-color: colors.$color-white;
+$action-btn-one-border-color: colors.$color-gray-200;
+$action-btn-one-bg-color-hover: colors.$color-white;
+$action-btn-one-border-color-hover: colors.$color-primary;
+
+$action-btn-two-text-color: colors.$color-gray-600;
+$action-btn-two-bg-color: colors.$color-white;
+$action-btn-two-border-color: colors.$color-gray-200;
+$action-btn-two-bg-color-hover: colors.$color-white;
+$action-btn-two-border-color-hover: colors.$color-gray-300;
+
+.alya-action-btn {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  font-family: $action-btn-text-font;
+
+  cursor: pointer;
+
+  transition: all 160ms ease;
+}
+
+.alya-action-btn__icon svg {
+  display: block;
+}
+
+
+//
+// alya-action-btn--one
+//
+
+.alya-action-btn--one {
+  position: relative;
+
+  display: flex;
+
+  flex-flow: column nowrap;
+
+  justify-content: center;
+
+  width: 150px;
+  height: 150px;
+  padding: 0;
+
+  font-size: 20px;
+  font-weight: 400;
+  color: $action-btn-one-text-color;
+
+  background-color: $action-btn-one-bg-color;
+  border: 2px solid $action-btn-one-border-color;
+  border-radius: 20px;
+}
+
+.alya-action-btn--one:focus,
+.alya-action-btn--one:hover {
+  background-color: $action-btn-one-bg-color-hover;
+  border-color: $action-btn-one-border-color-hover;
+}
+
+.alya-action-btn--one .alya-action-btn__icon {
+  margin-bottom: 2px;
+}
+
+.alya-action-btn--one .alya-action-btn__icon svg {
+  width: 55px;
+  height: 55px;
+}
+
+
+//
+// alya-action-btn--two
+//
+
+.alya-action-btn--two {
+  flex-flow: row nowrap;
+
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 70px;
+  padding: 0 15px;
+
+  font-size: 24px;
+  font-weight: 500;
+  color: $action-btn-two-text-color;
+
+  background-color: $action-btn-two-bg-color;
+  border: 2px solid $action-btn-two-border-color;
+  border-radius: 10px;
+}
+
+.alya-action-btn--two:focus,
+.alya-action-btn--two:hover {
+  background-color: $action-btn-two-bg-color-hover;
+  border-color: $action-btn-two-border-color-hover;
+}
+
+.alya-action-btn--two .alya-action-btn__icon {
+  margin-right: 10px;
+}
+
+.alya-action-btn--two .alya-action-btn__icon svg {
+  display: block;
+}
+
+@media only screen and (width <= 768px) {
+  .alya-action-btn--two {
+    font-size: 21px;
+  }
+}

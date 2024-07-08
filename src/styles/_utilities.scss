@@ -1,0 +1,14 @@
+@use 'sass:meta';
+@use 'sass:math';
+@use 'sass:map';
+@use 'themes';
+
+$base-font-size: 16px !default;
+
+@function to-rem($px) {
+  @if math.unit($px) != 'px' {
+    @error "Expected argument $px to be of type `px`, instead received: `#{unit($px)}`";
+  }
+
+  @return math.div($px, $base-font-size) * 1rem;
+}

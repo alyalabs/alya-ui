@@ -1,0 +1,40 @@
+@use 'sass:map';
+@use 'colors';
+
+$themes: (
+  'default': ()
+);
+
+$theme: map.get($themes, 'default');
+
+@mixin push($theme-name, $props) {  
+  $theme: ();
+
+  @if map.has-key($themes, $theme-name) {
+    $theme: map.get($themes, $theme-name);
+  }
+
+  $theme: map.merge($theme, $props);
+  $themes: map.set($themes, $theme-name, $theme) !global;
+}
+
+@function get($property-name) {
+  @return map.get($theme, $property-name);
+}
+
+@mixin apply {
+  $theme: map.get($themes, 'default') !global;
+  @content;
+
+  @each $theme-name in map.keys($themes) {
+    @if $theme-name != 'default' {
+      $theme: map.get($themes, $theme-name) !global;
+
+      .alya-theme--#{$theme-name} & {
+        @content;
+      }
+
+      $theme: null !global;
+    }
+  }
+}

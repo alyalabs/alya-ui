@@ -1,0 +1,23 @@
+{
+  "name": "alya-ui-javascript-example",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Carlos Eduardo Barbosa de Almeida",
+  "scripts": {
+    "build": "npx vite build",
+    "dev": "npx vite --force",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "alya-forms": "file:../../",
+    "alya-ui": "file:../..",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.3.3"
+  },
+  "type": "module"
+}

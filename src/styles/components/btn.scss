@@ -1,0 +1,323 @@
+@use '../colors';
+@use '../layers';
+@use '../fonts';
+
+$btn-text-color: colors.$color-white;
+$btn-text-font: fonts.$font-secondary;
+$btn-bg-color: colors.$color-dark-prussian-blue;
+$btn-border-color: colors.$color-black;
+
+
+$btn-one-text-color: colors.$color-white;
+$btn-one-bg-color: colors.$color-secondary;
+$btn-one-text-color-hover: colors.$color-white;
+$btn-one-bg-color-hover: colors.$color-secondary-500;
+$btn-one-text-color-disabled: colors.$color-white;
+$btn-one-bg-color-disabled: colors.$color-gray-400;
+
+
+$btn-two-text-color: colors.$color-dark-prussian-blue;
+$btn-two-bg-color: colors.$color-white;
+$btn-two-text-color-hover: colors.$color-gray-600;
+$btn-two-bg-color-hover: colors.$color-gray-200;
+$btn-two-text-color-disabled: colors.$color-gray-400;
+$btn-two-bg-color-disabled: colors.$color-gray-200;
+
+
+$btn-three-text-color: colors.$color-gray-600;
+$btn-three-bg-color: transparent;
+$btn-three-text-color-hover: colors.$color-gray-600;
+$btn-three-bg-color-hover: colors.$color-gray-200;
+$btn-three-text-color-disabled: colors.$color-gray-500;
+$btn-three-bg-color-disabled: transparent;
+
+
+$btn-four-text-color: colors.$color-gray-600;
+$btn-four-bg-color: colors.$color-white;
+$btn-four-border-color: colors.$color-gray-200;
+$btn-four-text-color-hover: colors.$color-gray-600;
+$btn-four-bg-color-hover: colors.$color-white;
+$btn-four-border-color-hover: colors.$color-gray-300;
+$btn-four-text-color-disabled: colors.$color-gray-400;
+$btn-four-bg-color-disabled: colors.$color-white;
+$btn-four-border-color-disabled: colors.$color-white;
+
+.alya-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  flex-flow: row nowrap;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 20px;
+  margin: 0;
+
+  font-family: $btn-text-font;
+  font-size: 16px;
+  font-weight: 600;
+  color: $btn-text-color;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  background-color: $btn-bg-color;
+  border: none;
+  border-radius: 10px;
+
+  transition: all 160ms ease-in;
+}
+
+.alya-btn[disabled] {
+  cursor: not-allowed;
+}
+
+.alya-btn__icon svg {
+  display: block;
+
+  width: 19px;
+  height: 19px;
+}
+
+.alya-btn__icon--left {
+  margin-right: 8px;
+}
+
+.alya-btn__icon--right {
+  margin-left: 8px;
+}
+
+@media only screen and (width <= 768px) {
+  .alya-btn {
+    font-size: 14px;
+  }
+}
+
+
+// alya-btn - small
+
+.alya-btn--small {
+  padding: 10px 18px;
+
+  font-size: 14px;
+}
+
+
+.alya-btn--small .alya-btn__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+//
+// alya-btn--only-icon
+//
+
+.alya-btn--only-icon {
+  padding: 6px;
+}
+
+.alya-btn--only-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+//
+// alya-btn--one
+//
+
+.alya-btn--one {
+  padding: 12px 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: $btn-one-text-color;
+
+  background-color: $btn-one-bg-color;
+  border: none;
+}
+
+.alya-btn--one:focus,
+.alya-btn--one:hover {
+  color: $btn-one-text-color-hover;
+
+  background-color: $btn-one-bg-color-hover;
+}
+
+.alya-btn--one[disabled] {
+  color: $btn-one-text-color-disabled;
+
+  background-color: $btn-one-bg-color-disabled;
+}
+
+@media only screen and (width <= 768px) {
+  .alya-btn--one {
+    font-size: 14px;
+  }
+}
+
+
+// alya-btn--one - small
+
+.alya-btn--one.alya-btn--small {
+  padding: 10px 18px;
+
+  font-size: 14px;
+}
+
+// alya-btn--one - only icon
+
+.alya-btn--one.alya-btn--only-icon {
+  padding: 6px;
+}
+
+
+//
+// alya-btn--two
+//
+
+.alya-btn--two {
+  padding: 12px 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: $btn-two-text-color;
+
+  background-color: $btn-two-bg-color;
+  border: none;
+}
+
+.alya-btn--two:focus,
+.alya-btn--two:hover {
+  color: $btn-two-text-color-hover;
+
+  background-color: $btn-two-bg-color-hover;
+}
+
+.alya-btn--two[disabled] {
+  color: $btn-two-text-color-disabled;
+
+  background-color: $btn-two-bg-color-disabled;
+}
+  
+@media only screen and (width <= 768px) {
+  .alya-btn--two {
+    font-size: 14px;
+  }
+}
+
+
+// alya-btn--two - small
+
+.alya-btn--two.alya-btn--small {
+  padding: 10px 18px;
+
+  font-size: 14px;
+}
+
+
+// alya-btn--two - only icon
+
+.alya-btn--two.alya-btn--only-icon {
+  padding: 6px;
+}
+
+
+//
+// alya-btn--three
+//
+
+.alya-btn--three {
+  padding: 12px 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: $btn-three-text-color;
+
+  background-color: $btn-three-bg-color;
+  border: none;
+}
+
+.alya-btn--three:focus,
+.alya-btn--three:hover {
+  color: $btn-three-text-color-hover;
+
+  background-color: $btn-three-bg-color-hover;
+}
+
+.alya-btn--three[disabled] {
+  color: $btn-three-text-color-disabled;
+
+  background-color: $btn-three-bg-color-disabled;
+}
+
+
+// alya-btn--three - small
+
+.alya-btn--three.alya-btn--small {
+  padding: 10px 18px;
+
+  font-size: 14px;
+}
+
+
+// alya-btn--three - only icon
+
+.alya-btn--three.alya-btn--only-icon {
+  padding: 6px;
+}
+
+
+//
+// alya-btn--four
+//
+
+.alya-btn--four {
+  padding: 12px 16px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: $btn-four-text-color;
+
+  background-color: $btn-four-bg-color;
+  border: 2px solid $btn-four-border-color;
+}
+
+.alya-btn--four:focus,
+.alya-btn--four:hover {
+  color: $btn-four-text-color-hover;
+
+  background-color: $btn-four-bg-color-hover;
+  border-color: $btn-four-border-color-hover;
+}
+
+.alya-btn--four[disabled] {
+  color: $btn-four-text-color-disabled;
+
+  border-color: $btn-four-border-color-disabled;
+}
+  
+@media only screen and (width <= 768px) {
+  .alya-btn--four {
+    font-size: 14px;
+  }
+}
+
+
+// alya-btn--four - small
+
+.alya-btn--four.alya-btn--small {
+  padding: 10px 14px;
+
+  font-size: 14px;
+}
+
+
+// alya-btn--four - only icon
+
+.alya-btn--four.alya-btn--only-icon {
+  padding: 6px;
+}

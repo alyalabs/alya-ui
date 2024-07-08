@@ -1,0 +1,11 @@
+$motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+$motion-easing-ease-in: cubic-bezier(0.55, 0.08, 0.68, 0.53);
+$motion-easing-ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$motion-easing-ease-in-out: cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+$motion-duration-ultra-fast: 120ms;
+$motion-duration-fast: 250ms;
+$motion-duration-normal: 400ms;
+$motion-duration-moderate: 800ms;
+$motion-duration-slow: 1000ms;
+$motion-duration-ultra-slow: 2000ms;

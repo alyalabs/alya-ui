@@ -1,0 +1,151 @@
+@use 'fonts';
+
+@import 'themes';
+@import 'components/sidebar';
+@import 'components/btn';
+@import 'components/action-btn';
+@import 'components/page';
+@import 'components/page-header';
+@import 'components/panel-layout';
+
+:root {
+  --colorWhite: #fff;
+  --colorBlack: #000;
+  --colorEerieBlack: #1F1F1F;
+  --colorJet: #333;
+  --colorDavysGrey: #5D5D5D;
+  --colorDimGray: #6A6A6A;
+  --colorGreyWeb: #7D7C7C;
+  --colorBattleshipGrey: #8C8C8C;
+  --colorSilverGray: #CECECE;
+
+  --colorCultured2: #F4F4F6;
+  --colorCultured: #EFEFEF;
+  --colorPlatinum: #EBEBEB;
+  --colorGrainsboro: #E5E5EA;
+  --colorLightGray: #D1D1D6;
+
+  --colorMidnightBlue: #001365;
+  --colorUltramarineBlue: #3358FF;
+  --colorBlueCrayola: #5A78FF;
+  --colorBlueRYB: #2E4FE8;
+  --colorLavenderWeb: #EAEEFF;
+
+  //Dark
+
+  --corBranco: #fff; // colorWhite
+  --corBranco100: #FAFAFA; // colorSnowWhite
+  --corBranco200: #F4F4F6; // colorCultured2
+  --corBranco300: #f0f0f0; // não tinha nome, só o hexa
+  --corBranco400: #EBEBEB; // colorPlatinum
+  --corBranco500: #EFEFEF; // colorCultured
+  --corBranco600: #E5E5EA; // colorGrainsboro
+  --corBranco700: #D1D1D6; // colorLightGray
+  --corBranco800: #CECECE; // colorSilverGray
+
+  --corCinza100: #C2C2C2; // não tinha nome, só o hexa
+  --corCinza200: #AFAFB6; // não tinha nome, só o hexa
+  --corCinza300: #8C8C8C; // colorBattleshipGrey
+  --corCinza400: #7D7C7C; // colorGreyWeb
+  --corCinza500: #5D5D5D; // colorDavysGrey
+  --corCinza600: #868686; // não tinha nome
+  --corCinza700: #898989;
+
+  --corPreto: #000;  // colorBlack
+  --corPreto100: #464646; // não tinha nome, só o hexa
+  --corPreto200: #333; // colorJet
+  --corPreto300: #2C2C2E; // não tinha nome, só o hexa
+  --corPreto400: #1F1F1F; // colorEerieBlack
+
+  --corAzul400: #2684FF;  // não tinha nome, só o hexa
+  --corAzul500: #4676d3;  // colorHanBlue
+  --corAzul600: #283244;  // colorEbonyClay
+
+  --corAzulAnil200: #7391F9; // colorCornflowerBlue
+  --corAzulAnil300: #575fcc; // colorVioletBlue1 e colorIndigo
+  --corAzulAnil400: #535AC2; // colorVioletBlue2
+  --corAzulAnil500: #404691; // colorVioletBlue3
+
+  --corAmarelo100: #FEF0E6; // colorBridesmaid
+  --corAmarelo200: #FBCC6D; // colorGoldenrod1
+  --corAmarelo300: #FACD72; // colorGoldenrod2
+  --corAmarelo400: #FABF49; // colorCasablanca
+  --corAmarelo500: #f9c23b; // colorHoneyYellow1 
+  --corAmarelo600: #FDB809; // colorHoneyYellow2
+  --corAmarelo700: #F5AB17; // colorHoneyYellow3
+  --corAmarelo800: #e8891b; // não tinha nome, só o hexa
+
+  --corVermelho400: #db0e0e; // não tinha nome, só o hexa
+
+  --corVermelhoCarmesim100: #F9A073; // não tinha nome, só o hexa  
+  --corVermelhoCarmesim400: #D44953; // var(--corVermelhoCarmesim400)
+
+  --corVerde100: #4BF98A; // não tinha nome, só o hexa  
+  --corVerde200: #02d949; // colorWhats
+
+  --corVerdeEsmeralda400: #33C49D; //colorOceanGreen1
+  --corVerdeEsmeralda500: #13AB82; // colorOceanGreen2
+
+
+  /* Color Group 1 */
+  --cg1-1: #FFDA1F;
+  --cg1-2: #FFC71F;
+  --cg1-3: #FFB41F;
+  --cg1-4: #FFA21F;
+  --cg1-5: #FF8F1F;
+  --cg1-6: #FF7C1F;
+  --cg1-7: #FF691F;
+  --cg1-8: #FF571F;
+  
+  
+  
+
+
+  --corFundoSidebar: var(--corBranco);
+  --corFundo: var(--corBranco500);
+
+  --corFundoBox: var(--corBranco);
+
+  --corTitulo: var(--corBranco);
+  --corSubtitulo: var(--corCinza500);
+
+  --corIconeRemover: var(--corBranco800);
+  --corIconeRemoverHover: var(--corCinza300);
+  --corTextoSecundario: var(--corCinza300); //chapeu
+  --corLinkVermelho: var(--corVermelhoCarmesim400);
+
+  --corBorda: var(--corBranco300);
+  --corBorda2: var(--corBranco800);
+  --corBorda3: var(--corTextoSecundario);
+
+  --corBtnActionHover: var(--corAmarelo300);
+  --corBtnOne: var(--corAzulAnil400);
+  --corBtnTwoHover: var(--corCinza300);
+
+  --corPrimaria100: var(--corAmarelo100);
+  --corPrimaria200: var(--corAmarelo200);
+  --corPrimaria300: var(--corAmarelo300);
+  --corPrimaria400: var(--corAmarelo400);
+  --corPrimaria500: var(--corAmarelo500);
+  --corPrimaria600: var(--corAmarelo600);
+
+  --corSecundaria200: var(--corAmarelo200);
+  --corSecundaria300: var(--corAmarelo300);
+  --corSecundaria400: var(--corAmarelo400);
+  --corSecundaria500: var(--corAmarelo500);
+
+  --corGradeAulaLivre: var(--corAzulAnil200);
+}
+
+body {
+  margin: 0;
+}
+
+.alya {
+  font-family: fonts.$font-primary;
+}
+
+.alya * {
+  box-sizing: border-box;
+}
+

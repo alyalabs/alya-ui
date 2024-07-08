@@ -1,0 +1,239 @@
+@use '../borders';
+@use '../colors';
+@use '../fonts';
+@use '../layers';
+@use '../motion';
+@use '../spacing';
+@use '../themes';
+@use '../utilities';
+
+@include themes.push('default', (
+  'sidebar-bg-color': colors.$color-white,
+  'sidebar-border-color': colors.$color-gray-200,
+
+  'sidebar-menu-item-text-color': colors.$color-dark-prussian-blue,
+  'sidebar-menu-item-bg-color': transparent,
+
+  'sidebar-menu-item-text-color-hover': colors.$color-dark-prussian-blue,
+  'sidebar-menu-item-bg-color-hover': colors.$color-primary-100,
+  
+  'sidebar-menu-item-text-color-active': colors.$color-white,
+  'sidebar-menu-item-bg-color-active': colors.$color-primary,
+
+  'sidebar-user-bg-color': transparent,
+  'sidebar-user-bg-color-hover': colors.$color-primary-100,
+  
+  'sidebar-user-name-text-color': colors.$color-dark-prussian-blue,
+  'sidebar-user-username-text-color': colors.$color-gray-500,
+
+  'sidebar-user-picture-border-color': colors.$color-primary,
+  'sidebar-user-picture-border-color-hover': colors.$color-primary-100,
+
+  'sidebar-title-text-color': colors.$color-white,
+  'sidebar-title-bg-color': colors.$color-secondary,
+));
+
+.alya-sidebar {
+  position: relative;
+
+  display: flex;
+
+  flex-flow: column nowrap;
+  flex-shrink: 0;
+
+  justify-content: space-between;
+
+  width: 240px;
+  height: 100%;
+
+  transition: all motion.$motion-duration-ultra-fast motion.$motion-easing-linear;
+
+  @include themes.apply {
+    background-color: themes.get('sidebar-bg-color');
+    border-right: borders.$border-width-md solid themes.get('sidebar-border-color');
+  }
+}
+
+.alya-sidebar__header {
+  position: relative;
+
+  width: 100%;
+  padding: spacing.$spacing-16;
+}
+
+.alya-sidebar__title {
+  padding: spacing.$spacing-12 spacing.$spacing-16;
+  padding-right: spacing.$spacing-24;
+  margin: 0;
+
+  font-size: fonts.$font-size-18;
+  font-weight: fonts.$font-weight-bold;
+
+  border-radius: borders.$border-radius-md;
+
+  @include themes.apply {
+    color: themes.get('sidebar-title-text-color');
+
+    background-color: themes.get('sidebar-title-bg-color');
+  }
+}
+
+.alya-sidebar__menu {
+  display: flex;
+
+  flex-flow: column nowrap;
+
+  gap: spacing.$spacing-6;
+
+  align-items: center;
+
+  width: 100%;
+  padding: spacing.$spacing-16;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+.alya-sidebar__menu li {
+  display: block;
+  
+  width: 100%;
+}
+
+.alya-sidebar__menu a {
+  display: flex;
+
+  flex-flow: row nowrap;
+
+  align-items: center;
+
+  width: 100%;
+  padding: spacing.$spacing-8 spacing.$spacing-12;
+
+  font-size: fonts.$font-size-16;
+  font-weight: fonts.$font-weight-semibold;
+  text-decoration: none;
+
+  border-radius: borders.$border-radius-md;
+
+  transition: all motion.$motion-duration-ultra-fast motion.$motion-easing-linear;
+
+  @include themes.apply {
+    color: themes.get('sidebar-menu-item-text-color');
+
+    background-color: themes.get('sidebar-menu-item-bg-color');
+  }
+}
+
+.alya-sidebar__menu a:not(.is-active):focus,
+.alya-sidebar__menu a:not(.is-active):hover {
+  @include themes.apply {
+    color: themes.get('sidebar-menu-item-text-color-hover');
+
+    background-color: themes.get('sidebar-menu-item-bg-color-hover');
+  }
+}
+
+.alya-sidebar__menu a.is-active {
+  @include themes.apply {
+    color: themes.get('sidebar-menu-item-text-color-active');
+
+    background-color: themes.get('sidebar-menu-item-bg-color-active');
+  }
+}
+
+.alya-sidebar__menu-icon {
+  height: 20px;
+  margin-right: spacing.$spacing-8;
+}
+
+.alya-sidebar__menu-icon svg {
+  height: 100%;
+}
+
+.alya-sidebar__user {
+  display: flex;
+
+  flex-flow: row wrap;
+
+  gap: spacing.$spacing-8;
+
+  align-items: center;
+
+  width: 100%;
+  padding: spacing.$spacing-8 spacing.$spacing-8;
+
+  cursor: pointer;
+
+  border-radius: borders.$border-radius-md;
+
+  transition: all motion.$motion-duration-ultra-fast motion.$motion-easing-linear;
+
+  @include themes.apply {
+    background-color: themes.get('sidebar-user-bg-color');
+  }
+}
+
+.alya-sidebar__user:hover {
+  @include themes.apply {
+    background-color: themes.get('sidebar-user-bg-color-hover');
+  }
+}
+
+.alya-sidebar__user-picture {
+  position: relative;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: borders.$border-radius-pill;
+
+  transition: all motion.$motion-duration-ultra-fast motion.$motion-easing-linear;
+
+  @include themes.apply {
+    border: borders.$border-width-md solid themes.get('sidebar-user-picture-border-color');
+  }
+}
+
+.alya-sidebar__user:hover .alya-sidebar__user-picture {
+  @include themes.apply {
+    border-color: themes.get('sidebar-user-picture-border-color-hover');
+  }
+}
+
+.alya-sidebar__user-picture img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  object-fit: cover;
+  object-position: center center;
+  border-radius: borders.$border-radius-pill;
+}
+
+.alya-sidebar__user-name {
+  font-size: fonts.$font-size-16;
+  font-weight: fonts.$font-weight-semibold;
+  letter-spacing: fonts.$font-letter-spacing-sm;
+  
+  @include themes.apply {
+    color: themes.get('sidebar-user-name-text-color');
+  }
+}
+
+.alya-sidebar__user-username {
+  font-size: fonts.$font-size-14;
+  letter-spacing: fonts.$font-letter-spacing-sm;
+  
+  @include themes.apply {
+    color: themes.get('sidebar-user-username-text-color');
+  }
+}
+
+.alya-sidebar__footer {
+  width: 100%;
+  padding: spacing.$spacing-16;
+}
+

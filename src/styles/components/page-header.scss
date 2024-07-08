@@ -1,0 +1,229 @@
+@use '../colors';
+@use '../layers';
+@use '../fonts';
+
+$page-header-one-bg-color: colors.$color-white;
+$page-header-one-title-color: colors.$color-black;
+$page-header-one-subtitle-color: colors.$color-white;
+$page-header-one-description-color: colors.$color-white;
+
+.alya-page-header {
+  position: relative;
+  z-index: layers.$layer-2;
+
+  display: flex;
+
+  flex-flow: row nowrap;
+
+  align-items: center;
+
+  height: 110px;
+  padding: 0 0 10px 15px;
+
+  background-color: colors.$color-gray-100;
+}
+
+.alya-page-header__row {
+  display: flex;
+
+  flex-flow: row nowrap;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.alya-page-header__left,
+.alya-page-header__right {
+  display: flex;
+
+  flex-flow: row nowrap;
+
+  align-items: center;
+}
+
+.alya-page-header__left {
+  justify-content: flex-start;
+
+  margin-left: 20px;
+}
+
+.alya-page-header__right {
+  justify-content: flex-end;
+
+  margin-right: 170px;
+}
+
+.alya-page-header__arrow {
+  display: flex;
+
+  align-items: center;
+
+  cursor: pointer;
+
+  background-color: transparent;
+  border: none;
+
+  transition: all 160ms ease;
+}
+
+.alya-page-header__arrow:focus,
+.alya-page-header__arrow:hover {
+  transform: scale(1.075);
+}
+
+.alya-page-header__arrow svg {
+  width: auto;
+  height: 30px;
+
+  stroke: colors.$color-black;
+}
+
+@media only screen and (width <= 768px) {
+  .alya-page-header__arrow {
+    display: none;
+  }
+}
+
+.alya-page-header__picture {
+  position: relative;
+
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+}
+
+.alya-page-header__picture img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.alya-page-header__picture input {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  appearance: none;
+  cursor: pointer;
+
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.alya-page-header__titles {
+  display: flex;
+
+  flex-flow: column nowrap;
+
+  margin-left: 15px;
+}
+
+.alya-page-header__title {
+  margin: 0;
+
+  font-size: 36px;
+  font-weight: 300;
+  color: colors.$color-black;
+}
+
+.alya-page-header__subtitle {
+  padding: 0 0 10px 5px;
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 400;
+  color: colors.$color-gray-500;
+  text-transform: uppercase;
+}
+
+.alya-page-header__subtitle:not(:first-child) {
+  margin-top: 30px;
+}
+
+.alya-page-header__description {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 300;
+  color: colors.$color-gray-500;
+}
+
+@media only screen and (width <= 768px) {
+  .alya-page-header__row:first-child {
+    flex-flow: column;
+
+    align-items: center;
+
+    width: calc(100% - 20px);
+    padding: 10px;
+  }
+
+  .alya-page-header__left {
+    margin: 0;
+  }
+
+  .alya-page-header--two .alya-page-header__title {
+    font-size: 20px;
+  }
+
+  .alya-page-header__right {
+    justify-content: center;
+
+    margin-top: 10px;
+    margin-right: 0;
+  }
+}
+
+
+//
+// alya-page-header--two
+//
+
+.alya-page-header--two {
+  flex-flow: column nowrap;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  width: 100%;
+  height: auto;
+  padding: 0;
+
+  background-color: colors.$color-white;
+  border-bottom: 2px solid colors.$color-gray-200;
+}
+
+.alya-page-header--two .alya-page-header__row:nth-child(1) {
+  height: 60px;
+}
+
+.alya-page-header--two .alya-page-header__arrow {
+  margin-right: 15px;
+}
+
+.alya-page-header--two .alya-page-header__arrow svg {
+  height: 26px;
+
+  stroke: colors.$color-gray-600;
+}
+
+.alya-page-header--two .alya-page-header__title {
+  padding: 0;
+  margin: 0;
+
+  font-size: 21px;
+  font-weight: 400;
+  color: colors.$color-gray-600;
+}
+

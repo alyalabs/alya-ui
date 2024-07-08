@@ -1,0 +1,20 @@
+@use 'utilities';
+
+$spacing-2: utilities.to-rem(2px);
+$spacing-4: utilities.to-rem(4px);
+$spacing-6: utilities.to-rem(6px);
+$spacing-8: utilities.to-rem(8px);
+$spacing-12: utilities.to-rem(12px);
+$spacing-16: utilities.to-rem(16px);
+$spacing-20: utilities.to-rem(20px);
+$spacing-24: utilities.to-rem(24px);
+$spacing-28: utilities.to-rem(28px);
+$spacing-32: utilities.to-rem(32px);
+$spacing-36: utilities.to-rem(36px);
+$spacing-40: utilities.to-rem(40px);
+$spacing-48: utilities.to-rem(48px);
+$spacing-56: utilities.to-rem(56px);
+$spacing-64: utilities.to-rem(64px);
+$spacing-80: utilities.to-rem(80px);
+$spacing-96: utilities.to-rem(96px);
+$spacing-128: utilities.to-rem(128px);
