@@ -25,7 +25,7 @@ const Button = forwardRef(function ({
   function renderOnlyIcon() {
     if (icon && onlyIcon) {
       return (
-        <div className="alya-btn__icon">
+        <div className="alya-button__icon">
           {icon}
         </div>
       )
@@ -35,7 +35,7 @@ const Button = forwardRef(function ({
   function renderIconLeft() {
     if (icon && iconSide === 'left') {
       return (
-        <div className="alya-btn__icon alya-btn__icon--left">
+        <div className="alya-button__icon alya-button__icon--left">
           {icon}
         </div>
       )
@@ -45,7 +45,7 @@ const Button = forwardRef(function ({
   function renderIconRight() {
     if (icon && iconSide === 'right') {
       return (
-        <div className="alya-btn__icon alya-btn__icon--right">
+        <div className="alya-button__icon alya-button__icon--right">
           {icon}
         </div>
       )
@@ -56,18 +56,18 @@ const Button = forwardRef(function ({
     <button
       {...props}
       className={clsx(
-        'alya-btn',
+        'alya-button',
         {
-          'alya-btn--one': variant === VARIANT_ONE,
-          'alya-btn--two': variant === VARIANT_TWO,
-          'alya-btn--three': variant === VARIANT_THREE,
-          'alya-btn--four': variant === VARIANT_FOUR,
+          'alya-button--one': variant === VARIANT_ONE,
+          'alya-button--two': variant === VARIANT_TWO,
+          'alya-button--three': variant === VARIANT_THREE,
+          'alya-button--four': variant === VARIANT_FOUR,
         },
         {
-          'alya-btn--small': size === SIZE_SMALL,
+          'alya-button--small': size === SIZE_SMALL,
         },
         {
-          'alya-btn--only-icon': onlyIcon,
+          'alya-button--only-icon': onlyIcon,
         },
         className
       )}

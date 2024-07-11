@@ -1,6 +1,11 @@
+@use '../borders';
 @use '../colors';
-@use '../layers';
 @use '../fonts';
+@use '../layers';
+@use '../motion';
+@use '../spacing';
+@use '../themes';
+@use '../utilities';
 
 $page-header-one-bg-color: colors.$color-white;
 $page-header-one-title-color: colors.$color-black;

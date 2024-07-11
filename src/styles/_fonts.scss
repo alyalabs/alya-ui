@@ -1,6 +1,6 @@
 @use 'utilities';
 
-$font-primary: 'DM Sans', sans-serif;
+$font-primary: 'Figtree', sans-serif;
 $font-secondary: 'myriad-pro', 'Myriad Pro', sans-serif;
 
 $font-size-12: utilities.to-rem(12px);
@@ -12,6 +12,7 @@ $font-size-24: utilities.to-rem(24px);
 $font-size-28: utilities.to-rem(28px);
 
 $font-size-32: utilities.to-rem(32px);
+$font-size-36: utilities.to-rem(36px);
 $font-size-40: utilities.to-rem(40px);
 $font-size-48: utilities.to-rem(48px);
 $font-size-52: utilities.to-rem(52px);

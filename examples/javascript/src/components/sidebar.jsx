@@ -15,7 +15,7 @@ export default function AppSidebar(props) {
 
           <Sidebar.Menu>
             <Sidebar.MenuItem href="/">
-              Home
+              Início
             </Sidebar.MenuItem>
             <Sidebar.MenuItem href="/pagina-1">
               Página 1

@@ -1,3 +1,12 @@
+@use '../borders';
+@use '../colors';
+@use '../fonts';
+@use '../layers';
+@use '../motion';
+@use '../spacing';
+@use '../themes';
+@use '../utilities';
+
 .alya-panel-layout {
   display: flex;
 

@@ -5,7 +5,7 @@ import {
   useAlyaUI
 } from '@/context/alya-ui-context'
 
-import IcArrowLeft from '@/icons/ic_arrow_left.svg'
+import IcArrowLeft from '@/icons/ic_arrow_left.svg?react'
 
 const VARIANT_ONE = 'one'
 const VARIANT_TWO = 'two'

@@ -30,7 +30,7 @@
   'sidebar-user-picture-border-color-hover': colors.$color-primary-100,
 
   'sidebar-title-text-color': colors.$color-white,
-  'sidebar-title-bg-color': colors.$color-secondary,
+  'sidebar-title-bg-color': colors.$color-secondary-300,
 ));
 
 .alya-sidebar {
@@ -62,12 +62,12 @@
 }
 
 .alya-sidebar__title {
-  padding: spacing.$spacing-12 spacing.$spacing-16;
+  padding: spacing.$spacing-18 spacing.$spacing-18;
   padding-right: spacing.$spacing-24;
   margin: 0;
 
   font-size: fonts.$font-size-18;
-  font-weight: fonts.$font-weight-bold;
+  font-weight: fonts.$font-weight-semibold;
 
   border-radius: borders.$border-radius-md;
 

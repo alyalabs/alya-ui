@@ -15,16 +15,16 @@ const ActionButton = forwardRef(function ({
     <button
       {...props}
       className={clsx(
-        'alya-action-btn',
+        'alya-action-button',
         {
-          'alya-action-btn--one': variant === VARIANT_ONE,
-          'alya-action-btn--two': variant === VARIANT_TWO,
+          'alya-action-button--one': variant === VARIANT_ONE,
+          'alya-action-button--two': variant === VARIANT_TWO,
         },
         className
       )}
       ref={ref}
     >
-      <div className="alya-action-btn__icon">
+      <div className="alya-action-button__icon">
         {icon}
       </div>
       {children}
