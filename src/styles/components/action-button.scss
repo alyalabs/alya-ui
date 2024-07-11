@@ -1,0 +1,125 @@
+@use '../borders';
+@use '../colors';
+@use '../fonts';
+@use '../layers';
+@use '../motion';
+@use '../spacing';
+@use '../themes';
+@use '../utilities';
+
+$action-button-text-font: fonts.$font-primary;
+
+$action-button-one-text-color: colors.$color-gray-600;
+$action-button-one-bg-color: colors.$color-white;
+$action-button-one-border-color: colors.$color-gray-200;
+$action-button-one-bg-color-hover: colors.$color-white;
+$action-button-one-border-color-hover: colors.$color-primary;
+
+$action-button-two-text-color: colors.$color-gray-600;
+$action-button-two-bg-color: colors.$color-white;
+$action-button-two-border-color: colors.$color-gray-200;
+$action-button-two-bg-color-hover: colors.$color-white;
+$action-button-two-border-color-hover: colors.$color-gray-300;
+
+.alya-action-button {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  font-family: $action-button-text-font;
+
+  cursor: pointer;
+
+  transition: all 160ms ease;
+}
+
+.alya-action-button__icon svg {
+  display: block;
+}
+
+
+//
+// alya-action-button--one
+//
+
+.alya-action-button--one {
+  position: relative;
+
+  display: flex;
+
+  flex-flow: column nowrap;
+
+  justify-content: center;
+
+  width: 150px;
+  height: 150px;
+  padding: 0;
+
+  font-size: 20px;
+  font-weight: 400;
+  color: $action-button-one-text-color;
+
+  background-color: $action-button-one-bg-color;
+  border: 2px solid $action-button-one-border-color;
+  border-radius: 20px;
+}
+
+.alya-action-button--one:focus,
+.alya-action-button--one:hover {
+  background-color: $action-button-one-bg-color-hover;
+  border-color: $action-button-one-border-color-hover;
+}
+
+.alya-action-button--one .alya-action-button__icon {
+  margin-bottom: 2px;
+}
+
+.alya-action-button--one .alya-action-button__icon svg {
+  width: 55px;
+  height: 55px;
+}
+
+
+//
+// alya-action-button--two
+//
+
+.alya-action-button--two {
+  flex-flow: row nowrap;
+
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 70px;
+  padding: 0 15px;
+
+  font-size: 24px;
+  font-weight: 500;
+  color: $action-button-two-text-color;
+
+  background-color: $action-button-two-bg-color;
+  border: 2px solid $action-button-two-border-color;
+  border-radius: 10px;
+}
+
+.alya-action-button--two:focus,
+.alya-action-button--two:hover {
+  background-color: $action-button-two-bg-color-hover;
+  border-color: $action-button-two-border-color-hover;
+}
+
+.alya-action-button--two .alya-action-button__icon {
+  margin-right: 10px;
+}
+
+.alya-action-button--two .alya-action-button__icon svg {
+  display: block;
+}
+
+@media only screen and (width <= 768px) {
+  .alya-action-button--two {
+    font-size: 21px;
+  }
+}
