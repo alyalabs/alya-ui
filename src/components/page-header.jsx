@@ -5,32 +5,33 @@ import {
   useAlyaUI
 } from '@/context/alya-ui-context'
 
-import IcArrowLeft from '@/icons/ic_arrow_left.svg?react'
-
-const VARIANT_ONE = 'one'
-const VARIANT_TWO = 'two'
+import { ArrowLeft } from 'lucide-react'
 
 const PageHeader = forwardRef(function ({
-  variant = VARIANT_ONE,
-  onArrowClick,
+  showBackButton = false,
+  transparent = true,
+  onBackButtonClick,
+
   className,
   children,
   ...props
 }, ref) {
   const { page } = useAlyaUI()
 
-  function handleArrowClick(event) {
-    if (onArrowClick instanceof Function) {
-      onArrowClick(event)
+  function handleBackButtonClick(event) {
+    if (onBackButtonClick instanceof Function) {
+      onBackButtonClick(event)
     }
   }
 
-  function renderArrow() {
-    return (
-      <button className="alya-page-header__arrow" onClick={handleArrowClick}>
-        <IcArrowLeft/>
-      </button>
-    )
+  function renderBackButton() {
+    if (showBackButton) {
+      return (
+        <button className="alya-page-header__back-button" onClick={handleBackButtonClick}>
+          <ArrowLeft/>
+        </button>
+      )
+    }
   }
 
   function renderTitle() {
@@ -49,41 +50,29 @@ const PageHeader = forwardRef(function ({
     }
   }
 
-  if (variant === VARIANT_ONE) {
-    return (
-      <header {...props} className={clsx('alya-page-header alya-page-header--one', className)} ref={ref}>
-        {renderArrow()}
-        <div className="alya-page-header__titles">
-          {renderTitle()}
-          {renderSubtitle()}
-          {renderDescription()}
-        </div>
-      </header>
-    )
-  }
+  return (
+    <header {...props}
+      className={clsx('alya-page-header', {
+        'alya-page-header_show-back-button': showBackButton,
+        'alya-page-header_transparent': transparent
+      }, className)}
+      ref={ref}
+    >
+      <div className="alya-page-header__row">
+        <div className="alya-page-header__left">
+          {renderBackButton()}
 
-  if (variant === VARIANT_TWO) {
-    return (
-      <header {...props} className={clsx('alya-page-header alya-page-header--two', className)} ref={ref}>
-        <div className="alya-page-header__row">
-          <div className="alya-page-header__left">
-            {renderArrow()}
-
-            <div className="alya-page-header__titles">
-              {renderTitle()}
-              {renderSubtitle()}
-              {renderDescription()}
-            </div>
-          </div>
-          <div className="alya-page-header__right">
+          <div className="alya-page-header__titles">
+            {renderTitle()}
+            {renderSubtitle()}
+            {renderDescription()}
           </div>
         </div>
-      </header>
-    )
-  }
+        <div className="alya-page-header__right">
+        </div>
+      </div>
+    </header>
+  )
 })
 
-export default Object.assign(PageHeader, {
-  VARIANT_ONE,
-  VARIANT_TWO,
-})
+export default PageHeader

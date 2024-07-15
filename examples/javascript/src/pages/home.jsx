@@ -13,12 +13,8 @@ export default function Home(props) {
 
   return (
     <Page>
-      <Page.Titles>
-        <Page.Title>Alunos</Page.Title>
-        <Page.Subtitle>Procure e cadastre novos alunos</Page.Subtitle>
-      </Page.Titles>
-
-      <Page.Header></Page.Header>
+      <Page.Header/>
+      <Page.Content></Page.Content>
     </Page>
   )
 }

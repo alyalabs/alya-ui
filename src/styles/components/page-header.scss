@@ -7,10 +7,13 @@
 @use '../themes';
 @use '../utilities';
 
-$page-header-one-bg-color: colors.$color-white;
-$page-header-one-title-color: colors.$color-black;
-$page-header-one-subtitle-color: colors.$color-white;
-$page-header-one-description-color: colors.$color-white;
+@include themes.push('default', (
+  'page-header-bg-color': transparent,
+  'page-header-title-text-color': colors.$color-gray-600,
+  'page-header-subtitle-text-color': colors.$color-gray-600,
+  'page-header-description-text-color': colors.$color-gray-600,
+  'page-header-back-button-color': colors.$color-gray-600,
+));
 
 .alya-page-header {
   position: relative;
@@ -21,11 +24,11 @@ $page-header-one-description-color: colors.$color-white;
   flex-flow: row nowrap;
 
   align-items: center;
+  justify-content: space-between;
 
-  height: 110px;
-  padding: 0 0 10px 15px;
-
-  background-color: colors.$color-gray-100;
+  @include themes.apply {
+    background-color: themes.get('page-header-bg-color');
+  }
 }
 
 .alya-page-header__row {
@@ -50,80 +53,50 @@ $page-header-one-description-color: colors.$color-white;
 
 .alya-page-header__left {
   justify-content: flex-start;
-
-  margin-left: 20px;
 }
 
 .alya-page-header__right {
   justify-content: flex-end;
-
-  margin-right: 170px;
 }
 
-.alya-page-header__arrow {
+.alya-page-header__back-button {
   display: flex;
 
   align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin-right: spacing.$spacing-14;
+  margin-left: spacing.$spacing-28;
 
   cursor: pointer;
 
   background-color: transparent;
   border: none;
 
-  transition: all 160ms ease;
+  transition: all motion.$motion-duration-fast motion.$motion-easing-linear;
 }
 
-.alya-page-header__arrow:focus,
-.alya-page-header__arrow:hover {
+.alya-page-header__back-button:focus,
+.alya-page-header__back-button:hover {
   transform: scale(1.075);
 }
 
-.alya-page-header__arrow svg {
+.alya-page-header__back-button svg {
   width: auto;
-  height: 30px;
+  height: 26px;
 
-  stroke: colors.$color-black;
-}
-
-@media only screen and (width <= 768px) {
-  .alya-page-header__arrow {
-    display: none;
+  stroke-width: 4px;
+  
+  @include themes.apply {
+    stroke: themes.get('page-header-back-button-color');
   }
 }
 
-.alya-page-header__picture {
-  position: relative;
-
-  width: 45px;
-  height: 45px;
-  margin-right: 15px;
-}
-
-.alya-page-header__picture img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.alya-page-header__picture input {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  appearance: none;
-  cursor: pointer;
-
-  border-radius: 50%;
-  opacity: 0;
+@media only screen and (width <= 768px) {
+  .alya-page-header__back-button {
+    display: none;
+  }
 }
 
 .alya-page-header__titles {
@@ -131,104 +104,43 @@ $page-header-one-description-color: colors.$color-white;
 
   flex-flow: column nowrap;
 
-  margin-left: 15px;
+  padding: spacing.$spacing-28 spacing.$spacing-36;
+}
+
+// alya-page-header_show-back-button
+
+.alya-page-header_show-back-button .alya-page-header__titles {
+  padding: spacing.$spacing-28 0;
 }
 
 .alya-page-header__title {
   margin: 0;
 
-  font-size: 36px;
-  font-weight: 300;
-  color: colors.$color-black;
+  font-size: fonts.$font-size-34;
+
+  @include themes.apply {
+    color: themes.get('page-header-title-text-color');
+  }
 }
 
 .alya-page-header__subtitle {
-  padding: 0 0 10px 5px;
   margin: 0;
 
-  font-size: 16px;
+  font-size: fonts.$font-size-16;
   font-weight: 400;
-  color: colors.$color-gray-500;
-  text-transform: uppercase;
-}
 
-.alya-page-header__subtitle:not(:first-child) {
-  margin-top: 30px;
+  @include themes.apply {
+    color: themes.get('page-header-subtitle-text-color');
+  }
 }
 
 .alya-page-header__description {
   margin: 0;
 
-  font-size: 18px;
-  font-weight: 300;
-  color: colors.$color-gray-500;
-}
-
-@media only screen and (width <= 768px) {
-  .alya-page-header__row:first-child {
-    flex-flow: column;
-
-    align-items: center;
-
-    width: calc(100% - 20px);
-    padding: 10px;
-  }
-
-  .alya-page-header__left {
-    margin: 0;
-  }
-
-  .alya-page-header--two .alya-page-header__title {
-    font-size: 20px;
-  }
-
-  .alya-page-header__right {
-    justify-content: center;
-
-    margin-top: 10px;
-    margin-right: 0;
-  }
-}
-
-
-//
-// alya-page-header--two
-//
-
-.alya-page-header--two {
-  flex-flow: column nowrap;
-
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  width: 100%;
-  height: auto;
-  padding: 0;
-
-  background-color: colors.$color-white;
-  border-bottom: 2px solid colors.$color-gray-200;
-}
-
-.alya-page-header--two .alya-page-header__row:nth-child(1) {
-  height: 60px;
-}
-
-.alya-page-header--two .alya-page-header__arrow {
-  margin-right: 15px;
-}
-
-.alya-page-header--two .alya-page-header__arrow svg {
-  height: 26px;
-
-  stroke: colors.$color-gray-600;
-}
-
-.alya-page-header--two .alya-page-header__title {
-  padding: 0;
-  margin: 0;
-
-  font-size: 21px;
+  font-size: fonts.$font-size-16;
   font-weight: 400;
-  color: colors.$color-gray-600;
-}
 
+  @include themes.apply {
+    color: themes.get('page-header-description-text-color');
+  }
+}

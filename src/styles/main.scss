@@ -1,6 +1,12 @@
+@use 'borders';
+@use 'colors';
 @use 'fonts';
+@use 'layers';
+@use 'motion';
+@use 'spacing';
+@use 'themes';
+@use 'utilities';
 
-@import 'themes';
 @import 'components/sidebar';
 @import 'components/button';
 @import 'components/action-button';
@@ -137,12 +143,20 @@
   --corGradeAulaLivre: var(--corAzulAnil200);
 }
 
+@include themes.push('default', (
+  'alya-bg-color': colors.$color-gray-100,
+));
+
 body {
   margin: 0;
 }
 
 .alya {
   font-family: fonts.$font-primary;
+
+  @include themes.apply {
+    background-color: themes.get('alya-bg-color');
+  }
 }
 
 .alya * {

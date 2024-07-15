@@ -2,6 +2,8 @@ import React from 'react'
 
 import { Sidebar } from 'alya-ui'
 
+import { Home, Box } from 'lucide-react'
+
 import user_placeholder from '@/assets/img/user_placeholder.png'
 import carlos from '@/assets/img/carlos.png'
 
@@ -14,11 +16,11 @@ export default function AppSidebar(props) {
           </Sidebar.Header>
 
           <Sidebar.Menu>
-            <Sidebar.MenuItem href="/">
+            <Sidebar.MenuItem icon={<Home/>} href="/">
               Início
             </Sidebar.MenuItem>
-            <Sidebar.MenuItem href="/pagina-1">
-              Página 1
+            <Sidebar.MenuItem icon={<Box/>} href="/page-1">
+              Page 1
             </Sidebar.MenuItem>
           </Sidebar.Menu>
         </Sidebar.Top>
