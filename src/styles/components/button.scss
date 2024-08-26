@@ -8,41 +8,44 @@
 @use '../utilities';
 
 @include themes.push('default', (
-  'button-text-color': colors.$color-white,
-  'button-text-font': fonts.$font-secondary,
-  'button-bg-color': colors.$color-dark-prussian-blue,
-  'button-border-color': colors.$color-black,
+  'button-text-color': colors.$color-gray-600,
+  'button-bg-color': colors.$color-white,
+  'button-border-color': colors.$color-gray-200,
 
-  'button-one-text-color': colors.$color-white,
-  'button-one-bg-color': colors.$color-secondary,
-  'button-one-text-color-hover': colors.$color-white,
-  'button-one-bg-color-hover': colors.$color-secondary-500,
-  'button-one-text-color-disabled': colors.$color-white,
-  'button-one-bg-color-disabled': colors.$color-gray-400,
+  'button-text-color-hover': colors.$color-gray-600,
+  'button-bg-color-hover': colors.$color-white,
+  'button-border-color-hover': colors.$color-gray-300,
 
-  'button-two-text-color': colors.$color-dark-prussian-blue,
-  'button-two-bg-color': colors.$color-white,
-  'button-two-text-color-hover': colors.$color-gray-600,
-  'button-two-bg-color-hover': colors.$color-gray-200,
-  'button-two-text-color-disabled': colors.$color-gray-400,
-  'button-two-bg-color-disabled': colors.$color-gray-200,
+  'button-text-color-disabled': colors.$color-gray-400,
+  'button-bg-color-disabled': colors.$color-white,
+  'button-border-color-disabled': colors.$color-white,
 
-  'button-three-text-color': colors.$color-gray-600,
-  'button-three-bg-color': transparent,
-  'button-three-text-color-hover': colors.$color-gray-600,
-  'button-three-bg-color-hover': colors.$color-gray-200,
-  'button-three-text-color-disabled': colors.$color-gray-500,
-  'button-three-bg-color-disabled': transparent,
 
-  'button-four-text-color': colors.$color-gray-600,
-  'button-four-bg-color': colors.$color-white,
-  'button-four-border-color': colors.$color-gray-200,
-  'button-four-text-color-hover': colors.$color-gray-600,
-  'button-four-bg-color-hover': colors.$color-white,
-  'button-four-border-color-hover': colors.$color-gray-300,
-  'button-four-text-color-disabled': colors.$color-gray-400,
-  'button-four-bg-color-disabled': colors.$color-white,
-  'button-four-border-color-disabled': colors.$color-white,
+  'button-secondary-text-color': colors.$color-white,
+  'button-secondary-bg-color': colors.$color-secondary,
+  'button-secondary-border-color': colors.$color-secondary,
+
+  'button-secondary-text-color-hover': colors.$color-white,
+  'button-secondary-bg-color-hover': colors.$color-secondary-600,
+  'button-secondary-border-color-hover': colors.$color-secondary-600,
+
+  'button-secondary-text-color-disabled': colors.$color-gray-200,
+  'button-secondary-bg-color-disabled': colors.$color-secondary-300,
+  'button-secondary-border-color-disabled': colors.$color-secondary,
+
+
+  'button-tertiary-text-color': colors.$color-gray-600,
+  'button-tertiary-bg-color': transparent,
+  'button-tertiary-border-color': transparent,
+
+  'button-tertiary-text-color-hover': colors.$color-gray-600,
+  'button-tertiary-bg-color-hover': colors.$color-gray-200,
+  'button-tertiary-border-color-hover': colors.$color-gray-200,
+
+  'button-tertiary-text-color-disabled': colors.$color-gray-500,
+  'button-tertiary-bg-color-disabled': transparent,
+  'button-tertiary-border-color-disabled': transparent,
+
 ));
 
 .alya-button {
@@ -52,16 +55,17 @@
 
   flex-flow: row nowrap;
 
+  gap: spacing.$spacing-6;
+
   align-items: center;
   justify-content: center;
 
-  padding: spacing.$spacing-12 spacing.$spacing-20;
+  padding: spacing.$spacing-12 spacing.$spacing-16;
   margin: 0;
 
   font-size: fonts.$font-size-16;
   font-weight: fonts.$font-weight-semibold;
   text-decoration: none;
-  text-transform: uppercase;
 
   cursor: pointer;
 
@@ -75,25 +79,32 @@
     color: themes.get('button-text-color');
 
     background-color: themes.get('button-bg-color');
+    border: borders.$border-width-md solid themes.get('button-border-color');
   }
 }
 
-.alya-button[disabled] {
-  cursor: not-allowed;
+.alya-button:focus,
+.alya-button:hover {
+  @include themes.apply {
+    color: themes.get('button-text-color-hover');
+
+    background-color: themes.get('button-bg-color-hover');
+    border-color: themes.get('button-border-color-hover');
+  }
 }
 
 .alya-button__icon svg {
   display: block;
 
-  width: spacing.$spacing-18;
-  height: spacing.$spacing-18;
+  width: spacing.$spacing-20;
+  height: spacing.$spacing-20;
 }
 
-.alya-button__icon--left {
+.alya-button__icon_left {
   margin-right: spacing.$spacing-8;
 }
 
-.alya-button__icon--right {
+.alya-button__icon_right {
   margin-left: spacing.$spacing-8;
 }
 
@@ -103,215 +114,141 @@
   }
 }
 
-// alya-button - small
+// alya-button_uppercase
 
-.alya-button--small {
-  padding: spacing.$spacing-10 spacing.$spacing-18;
-
+.alya-button_uppercase {
   font-size: fonts.$font-size-14;
+  text-transform: uppercase;
 }
 
-.alya-button--small .alya-button__icon svg {
-  width: spacing.$spacing-16;
-  height: spacing.$spacing-16;
+.alya-button_uppercase.alya-button_sm {
+  font-size: fonts.$font-size-12;
 }
 
-// alya-button--only-icon
-
-.alya-button--only-icon {
-  padding: spacing.$spacing-6;
-}
-
-.alya-button--only-icon svg {
-  width: spacing.$spacing-18;
-  height: spacing.$spacing-18;
-}
-
-// alya-button--one
-
-.alya-button--one {
-  padding: spacing.$spacing-12 spacing.$spacing-20;
-
+.alya-button_uppercase.alya-button_lg {
   font-size: fonts.$font-size-16;
-  font-weight: fonts.$font-weight-semibold;
+}
+
+// alya-button_disabled
+
+.alya-button[disabled],
+.alya-button_disabled {
+  cursor: not-allowed;
 
   @include themes.apply {
-    color: themes.get('button-one-text-color');
+    color: themes.get('button-text-color-disabled');
 
-    background-color: themes.get('button-one-bg-color');
+    background-color: themes.get('button-bg-color-disabled');
+    border-color: themes.get('button-border-color-disabled');
   }
 }
 
-.alya-button--one:focus,
-.alya-button--one:hover {
-  @include themes.apply {
-    color: themes.get('button-one-text-color-hover');
+// alya-button_sm
 
-    background-color: themes.get('button-one-bg-color-hover');
-  }
-}
-
-.alya-button--one[disabled] {
-  @include themes.apply {
-    color: themes.get('button-one-text-color-disabled');
-
-    background-color: themes.get('button-one-bg-color-disabled');
-  }
-}
-
-@media only screen and (width <= 768px) {
-  .alya-button--one {
-    font-size: fonts.$font-size-14;
-  }
-}
-
-.alya-button--one.alya-button--small {
-  padding: spacing.$spacing-10 spacing.$spacing-18;
-
-  font-size: fonts.$font-size-14;
-}
-
-.alya-button--one.alya-button--only-icon {
-  padding: spacing.$spacing-6;
-}
-
-// alya-button--two
-
-.alya-button--two {
-  padding: spacing.$spacing-12 spacing.$spacing-20;
-
-  font-size: fonts.$font-size-16;
-  font-weight: fonts.$font-weight-semibold;
-
-  @include themes.apply {
-    color: themes.get('button-two-text-color');
-
-    background-color: themes.get('button-two-bg-color');
-  }
-}
-
-.alya-button--two:focus,
-.alya-button--two:hover {
-  @include themes.apply {
-    color: themes.get('button-two-text-color-hover');
-
-    background-color: themes.get('button-two-bg-color-hover');
-  }
-}
-
-.alya-button--two[disabled] {
-  @include themes.apply {
-    color: themes.get('button-two-text-color-disabled');
-
-    background-color: themes.get('button-two-bg-color-disabled');
-  }
-}
-
-@media only screen and (width <= 768px) {
-  .alya-button--two {
-    font-size: fonts.$font-size-14;
-  }
-}
-
-.alya-button--two.alya-button--small {
-  padding: spacing.$spacing-10 spacing.$spacing-18;
-
-  font-size: fonts.$font-size-14;
-}
-
-.alya-button--two.alya-button--only-icon {
-  padding: spacing.$spacing-6;
-}
-
-// alya-button--three
-
-.alya-button--three {
-  padding: spacing.$spacing-12 spacing.$spacing-20;
-
-  font-size: fonts.$font-size-16;
-  font-weight: fonts.$font-weight-semibold;
-
-  @include themes.apply {
-    color: themes.get('button-three-text-color');
-
-    background-color: themes.get('button-three-bg-color');
-  }
-}
-
-.alya-button--three:focus,
-.alya-button--three:hover {
-  @include themes.apply {
-    color: themes.get('button-three-text-color-hover');
-
-    background-color: themes.get('button-three-bg-color-hover');
-  }
-}
-
-.alya-button--three[disabled] {
-  @include themes.apply {
-    color: themes.get('button-three-text-color-disabled');
-
-    background-color: themes.get('button-three-bg-color-disabled');
-  }
-}
-
-.alya-button--three.alya-button--small {
-  padding: spacing.$spacing-10 spacing.$spacing-18;
-
-  font-size: fonts.$font-size-14;
-}
-
-.alya-button--three.alya-button--only-icon {
-  padding: spacing.$spacing-6;
-}
-
-// alya-button--four
-
-.alya-button--four {
-  padding: spacing.$spacing-12 spacing.$spacing-16;
-
-  font-size: fonts.$font-size-16;
-  font-weight: fonts.$font-weight-semibold;
-
-  @include themes.apply {
-    color: themes.get('button-four-text-color');
-
-    background-color: themes.get('button-four-bg-color');
-    border: borders.$border-width-sm solid themes.get('button-four-border-color');
-  }
-}
-
-.alya-button--four:focus,
-.alya-button--four:hover {
-  @include themes.apply {
-    color: themes.get('button-four-text-color-hover');
-
-    background-color: themes.get('button-four-bg-color-hover');
-    border-color: themes.get('button-four-border-color-hover');
-  }
-}
-
-.alya-button--four[disabled] {
-  @include themes.apply {
-    color: themes.get('button-four-text-color-disabled');
-
-    background-color: themes.get('button-four-bg-color-disabled');
-    border-color: themes.get('button-four-border-color-disabled');
-  }
-}
-
-@media only screen and (width <= 768px) {
-  .alya-button--four {
-    font-size: fonts.$font-size-14;
-  }
-}
-
-.alya-button--four.alya-button--small {
+.alya-button_sm {
   padding: spacing.$spacing-10 spacing.$spacing-14;
 
   font-size: fonts.$font-size-14;
 }
 
-.alya-button--four.alya-button--only-icon {
+.alya-button_sm .alya-button__icon svg {
+  width: spacing.$spacing-18;
+  height: spacing.$spacing-18;
+}
+
+// alya-button_lg
+
+.alya-button_lg {
+  padding: spacing.$spacing-14 spacing.$spacing-18;
+
+  font-size: fonts.$font-size-18;
+}
+
+.alya-button_lg .alya-button__icon svg {
+  width: spacing.$spacing-22;
+  height: spacing.$spacing-22;
+}
+
+// alya-button_only-icon
+
+.alya-button_only-icon {
+  padding: spacing.$spacing-8;
+}
+
+.alya-button_only-icon.alya-button_sm {
   padding: spacing.$spacing-6;
+}
+
+.alya-button_only-icon.alya-button_lg {
+  padding: spacing.$spacing-10;
+}
+
+// alya-button_secondary
+
+.alya-button_secondary {
+  border: none;
+  
+  @include themes.apply {
+    color: themes.get('button-secondary-text-color');
+
+    background-color: themes.get('button-secondary-bg-color');
+    border-color: themes.get('button-secondary-border-color');
+  }
+}
+
+.alya-button_secondary:focus,
+.alya-button_secondary:hover {
+  @include themes.apply {
+    color: themes.get('button-secondary-text-color-hover');
+
+    background-color: themes.get('button-secondary-bg-color-hover');
+    border-color: themes.get('button-secondary-border-color-hover');
+  }
+}
+
+.alya-button_secondary[disabled],
+.alya-button_secondary.alya-button_disabled {
+  opacity: 0.7;
+
+  @include themes.apply {
+    color: themes.get('button-secondary-text-color-disabled');
+
+    background-color: themes.get('button-secondary-bg-color-disabled');
+    border-color: themes.get('button-secondary-border-color-disabled');
+  }
+}
+
+// alya-button_tertiary
+
+.alya-button_tertiary {
+  border: none;
+
+  @include themes.apply {
+    color: themes.get('button-tertiary-text-color');
+
+    background-color: themes.get('button-tertiary-bg-color');
+    border-color: themes.get('button-tertiary-border-color');
+  }
+}
+
+.alya-button_tertiary:focus,
+.alya-button_tertiary:hover {
+  @include themes.apply {
+    color: themes.get('button-tertiary-text-color-hover');
+
+    background-color: themes.get('button-tertiary-bg-color-hover');
+    border-color: themes.get('button-tertiary-border-color-hover');
+  }
+}
+
+.alya-button_tertiary[disabled],
+.alya-button_tertiary.alya-button_disabled {
+  opacity: 0.7;
+
+  @include themes.apply {
+    color: themes.get('button-tertiary-text-color-disabled');
+
+    background-color: themes.get('button-tertiary-bg-color-disabled');
+    border-color: themes.get('button-tertiary-border-color-disabled');
+  }
 }

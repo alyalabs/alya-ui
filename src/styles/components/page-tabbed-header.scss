@@ -1,0 +1,215 @@
+@use '../borders';
+@use '../colors';
+@use '../fonts';
+@use '../layers';
+@use '../motion';
+@use '../spacing';
+@use '../themes';
+@use '../utilities';
+
+@include themes.push('default', (
+  'page-tabbed-header-bg-color': transparent,
+  'page-tabbed-header-title-text-color': colors.$color-gray-600,
+  'page-tabbed-header-subtitle-text-color': colors.$color-gray-600,
+  'page-tabbed-header-description-text-color': colors.$color-gray-600,
+  'page-tabbed-header-back-button-color': colors.$color-gray-600,
+
+  'page-tabbed-header-tab-bg-color-hover': colors.$color-gray-300,
+  'page-tabbed-header-tab-active-after-bg-color': colors.$color-secondary,
+
+  'page-tabbed-header-small-bg-color': colors.$color-white,
+  'page-tabbed-header-small-border-bottom-color': colors.$color-gray-200,
+));
+
+.alya-page-tabbed-header {
+  position: relative;
+
+  @include themes.apply {
+    background-color: themes.get('page-tabbed-header-bg-color');
+  }
+}
+
+.alya-page-tabbed-header__row {
+  display: flex;
+
+  flex-flow: row nowrap;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.alya-page-tabbed-header__left,
+.alya-page-tabbed-header__right {
+  display: flex;
+
+  flex-flow: row nowrap;
+
+  align-items: center;
+}
+
+.alya-page-tabbed-header__left {
+  justify-content: flex-start;
+}
+
+.alya-page-tabbed-header__right {
+  justify-content: flex-end;
+}
+
+.alya-page-tabbed-header__back-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0 spacing.$spacing-20 0 spacing.$spacing-20;
+
+  cursor: pointer;
+
+  background-color: transparent;
+  border: none;
+
+  transition: all motion.$motion-duration-fast motion.$motion-easing-linear;
+}
+
+.alya-page-tabbed-header__back-button:focus,
+.alya-page-tabbed-header__back-button:hover {
+  transform: scale(1.075);
+}
+
+.alya-page-tabbed-header__back-button svg {
+  width: auto;
+  height: 26px;
+
+  stroke-width: 4px;
+  
+  @include themes.apply {
+    stroke: themes.get('page-tabbed-header-back-button-color');
+  }
+}
+
+.alya-page-tabbed-header__titles {
+  display: flex;
+
+  flex-flow: column nowrap;
+
+  padding: spacing.$spacing-28 spacing.$spacing-36;
+}
+
+.alya-page-tabbed-header__title {
+  margin: 0;
+
+  font-size: fonts.$font-size-34;
+
+  @include themes.apply {
+    color: themes.get('page-tabbed-header-title-text-color');
+  }
+}
+
+.alya-page-tabbed-header__description {
+  margin: spacing.$spacing-2 0 0 0;
+
+  font-size: fonts.$font-size-16;
+  font-weight: 400;
+
+  @include themes.apply {
+    color: themes.get('page-tabbed-header-description-text-color');
+  }
+}
+
+.alya-page-tabbed-header__tabs {
+  display: flex;
+
+  flex-flow: row nowrap;
+
+  width: 100%;
+  padding: 0 spacing.$spacing-36;
+  
+  outline: none;
+}
+
+.alya-page-tabbed-header__tab {
+  position: relative;
+
+  padding: spacing.$spacing-8 spacing.$spacing-12;
+
+  font-family: fonts.$font-primary;
+  font-size: fonts.$font-size-16;
+
+  cursor: pointer;
+
+  background-color: transparent;
+  border: none;
+}
+
+.alya-page-tabbed-header__tab::after {
+  position: absolute;
+  bottom: -#{borders.$border-width-lg};
+  left: 0;
+
+  display: block;
+
+  width: 100%;
+  height: borders.$border-width-lg;
+
+  content: '';
+}
+
+.alya-page-tabbed-header__tab:not(.alya-page-tabbed-header__tab_active):hover::after {
+  @include themes.apply {
+    background-color: themes.get('page-tabbed-header-tab-bg-color-hover');
+  }
+}
+
+.alya-page-tabbed-header__tab_active {
+  font-weight: fonts.$font-weight-semibold;
+}
+
+.alya-page-tabbed-header__tab_active::after {
+  @include themes.apply {
+    background-color: themes.get('page-tabbed-header-tab-active-after-bg-color');
+  }
+}
+
+.alya-page-tabbed-header_show-back-button .alya-page-tabbed-header__titles {
+  padding: spacing.$spacing-28 0;
+}
+
+.alya-page-tabbed-header_small {
+  border-bottom: borders.$border-width-lg solid;
+
+  @include themes.apply {
+    background-color: themes.get('page-tabbed-header-small-bg-color');
+    border-bottom-color: themes.get('page-tabbed-header-small-border-bottom-color');
+  }
+}
+
+.alya-page-tabbed-header_small .alya-page-tabbed-header__title {
+  font-size: fonts.$font-size-18;
+}
+
+.alya-page-tabbed-header_small .alya-page-tabbed-header__description {
+  font-size: fonts.$font-size-16;
+}
+
+.alya-page-tabbed-header_small .alya-page-tabbed-header__back-button svg {
+  height: 21px;
+}
+
+.alya-page-tabbed-header_small .alya-page-tabbed-header__titles {
+  padding: spacing.$spacing-16 spacing.$spacing-36;
+}
+
+.alya-page-tabbed-header_small.alya-page-tabbed-header_show-back-button .alya-page-tabbed-header__titles {
+  padding: spacing.$spacing-16 0;
+}
+
+.alya-page-tabbed-header_small .alya-page-tabbed-header__tabs {
+  padding: 0;
+}
+
+.alya-page-tabbed-header_small .alya-page-tabbed-header__tab {
+  padding: spacing.$spacing-8 spacing.$spacing-18;
+}

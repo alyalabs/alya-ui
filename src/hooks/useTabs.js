@@ -9,7 +9,7 @@ export default function useTabs(arr = []) {
   }, [arr])
 
   function changeTab(index, props = {}) {
-    if (params) {
+    if (props) {
       setTabs((tabs) => tabs.map((tab, i) => {
         if (i === index) return {
           ...tab,

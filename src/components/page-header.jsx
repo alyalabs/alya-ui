@@ -9,7 +9,8 @@ import { ArrowLeft } from 'lucide-react'
 
 const PageHeader = forwardRef(function ({
   showBackButton = false,
-  transparent = true,
+  small = false,
+  
   onBackButtonClick,
 
   className,
@@ -39,11 +40,7 @@ const PageHeader = forwardRef(function ({
       return (<h1 className="alya-page-header__title">{page.title}</h1>)
     }
   }
-  function renderSubtitle() {
-    if (page.subtitle) {
-      return (<h2 className="alya-page-header__subtitle">{page.subtitle}</h2>)
-    }
-  }
+  
   function renderDescription() {
     if (page.description) {
       return (<p className="alya-page-header__description">{page.description}</p>)
@@ -54,7 +51,7 @@ const PageHeader = forwardRef(function ({
     <header {...props}
       className={clsx('alya-page-header', {
         'alya-page-header_show-back-button': showBackButton,
-        'alya-page-header_transparent': transparent
+        'alya-page-header_small': small,
       }, className)}
       ref={ref}
     >
@@ -64,7 +61,6 @@ const PageHeader = forwardRef(function ({
 
           <div className="alya-page-header__titles">
             {renderTitle()}
-            {renderSubtitle()}
             {renderDescription()}
           </div>
         </div>

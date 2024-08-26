@@ -13,6 +13,9 @@
   'page-header-subtitle-text-color': colors.$color-gray-600,
   'page-header-description-text-color': colors.$color-gray-600,
   'page-header-back-button-color': colors.$color-gray-600,
+
+  'page-header-small-bg-color': colors.$color-white,
+  'page-header-small-border-bottom-color': colors.$color-gray-200,
 ));
 
 .alya-page-header {
@@ -93,24 +96,12 @@
   }
 }
 
-@media only screen and (width <= 768px) {
-  .alya-page-header__back-button {
-    display: none;
-  }
-}
-
 .alya-page-header__titles {
   display: flex;
 
   flex-flow: column nowrap;
 
   padding: spacing.$spacing-28 spacing.$spacing-36;
-}
-
-// alya-page-header_show-back-button
-
-.alya-page-header_show-back-button .alya-page-header__titles {
-  padding: spacing.$spacing-28 0;
 }
 
 .alya-page-header__title {
@@ -123,19 +114,8 @@
   }
 }
 
-.alya-page-header__subtitle {
-  margin: 0;
-
-  font-size: fonts.$font-size-16;
-  font-weight: 400;
-
-  @include themes.apply {
-    color: themes.get('page-header-subtitle-text-color');
-  }
-}
-
 .alya-page-header__description {
-  margin: 0;
+  margin: spacing.$spacing-2 0 0 0;
 
   font-size: fonts.$font-size-16;
   font-weight: 400;
@@ -143,4 +123,37 @@
   @include themes.apply {
     color: themes.get('page-header-description-text-color');
   }
+}
+
+.alya-page-header_show-back-button .alya-page-header__titles {
+  padding: spacing.$spacing-28 0;
+}
+
+.alya-page-header_small {
+  border-bottom: borders.$border-width-md solid;
+
+  @include themes.apply {
+    background-color: themes.get('page-header-small-bg-color');
+    border-bottom-color: themes.get('page-header-small-border-bottom-color');
+  }
+}
+
+.alya-page-header_small .alya-page-header__title {
+  font-size: fonts.$font-size-18;
+}
+
+.alya-page-header_small .alya-page-header__description {
+  font-size: fonts.$font-size-16;
+}
+
+.alya-page-header_small .alya-page-header__back-button svg {
+  height: 21px;
+}
+
+.alya-page-header_small .alya-page-header__titles {
+  padding: spacing.$spacing-16 spacing.$spacing-36;
+}
+
+.alya-page-header_small.alya-page-header_show-back-button .alya-page-header__titles {
+  padding: spacing.$spacing-16 0;
 }

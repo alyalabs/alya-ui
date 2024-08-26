@@ -1,4 +1,4 @@
-import React, {forwardRef} from 'react'
+import React, {forwardRef, useEffect} from 'react'
 import clsx from 'clsx'
 
 import {
@@ -14,6 +14,8 @@ const PageTabbedHeader = forwardRef(function ({
   updateTab,
   
   showBackButton = false,
+  small = false,
+
   onBackButtonClick,
 
   className,
@@ -21,6 +23,10 @@ const PageTabbedHeader = forwardRef(function ({
   ...props
 }, ref) {
   const { page } = useAlyaUI()
+
+  useEffect(() => {
+    console.log(tabs, currentTab)
+  }, [])
 
   function handleBackButtonClick(event) {
     if (onBackButtonClick instanceof Function) {
@@ -44,18 +50,33 @@ const PageTabbedHeader = forwardRef(function ({
     }
   }
   
-  function renderSubtitle() {
-    if (page.subtitle) {
-      return (<h2 className="alya-page-tabbed-header__subtitle">{page.subtitle}</h2>)
+  function renderDescription() {
+    if (page.description) {
+      return (<p className="alya-page-tabbed-header__description">{page.description}</p>)
     }
   }
 
-  function renderTabs() {}
+  function renderTabs() {
+    return tabs.map((tab, i) => {
+      return (
+        <button
+          key={i}
+          className={clsx('alya-page-tabbed-header__tab', {
+            'alya-page-tabbed-header__tab_active': i === currentTab
+          })}
+          onClick={() => changeTab(i)}
+        >
+          {tab.name}
+        </button>
+      )
+    })
+  }
 
   return (
     <header {...props}
       className={clsx('alya-page-tabbed-header', {
         'alya-page-tabbed-header_show-back-button': showBackButton,
+        'alya-page-tabbed-header_small': small,
       }, className)}
       ref={ref}
     >
@@ -65,7 +86,7 @@ const PageTabbedHeader = forwardRef(function ({
 
           <div className="alya-page-tabbed-header__titles">
             {renderTitle()}
-            {renderSubtitle()}
+            {renderDescription()}
           </div>
         </div>
         <div className="alya-page-tabbed-header__right">

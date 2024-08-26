@@ -7,25 +7,24 @@ import {
   useTabs,
 } from 'alya-ui'
 
-import Tab1 from '@/components/tab-1'
-import Tab2 from '@/components/tab-2'
+import TabPrimaryButtons from '@/components/tab-primary-buttons'
 
 export default function Page1(props) {
   const page = usePage({
-    title: 'Page 1',
-    description: 'Lorem ipsum dolor sit amet consectetur',
+    title: 'Buttons',
   })
 
   const [pageTabs] = useState([
-    { name: 'Tab 1', component: Tab1 },
-    { name: 'Tab 2', component: Tab2 },
+    { name: 'Primary', component: TabPrimaryButtons },
+    { name: 'Secondary', component: TabPrimaryButtons },
+    { name: 'Tertiary', component: TabPrimaryButtons },
   ])
 
   const tabs = useTabs(pageTabs)
 
   return (
     <Page>
-      <Page.TabbedHeader {...tabs} showBackButton={true} small={true}/>
+      <Page.Header showBackButton={true} small={true}/>
       <Page.Content>
         <Tab {...tabs}/>
       </Page.Content>

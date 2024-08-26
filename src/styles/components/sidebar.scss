@@ -144,7 +144,9 @@
 
 .alya-sidebar__menu-icon {
   display: flex;
+
   align-items: center;
+
   margin-right: spacing.$spacing-8;
 }
 
@@ -194,7 +196,7 @@
   transition: all motion.$motion-duration-ultra-fast motion.$motion-easing-linear;
 
   @include themes.apply {
-    /*border: borders.$border-width-md solid themes.get('sidebar-user-picture-border-color');*/
+    /* border: borders.$border-width-md solid themes.get('sidebar-user-picture-border-color'); */
   }
 }
 

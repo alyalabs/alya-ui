@@ -22,6 +22,9 @@ export default function AppSidebar(props) {
             <Sidebar.MenuItem icon={<Box/>} href="/page-1">
               Page 1
             </Sidebar.MenuItem>
+            <Sidebar.MenuItem icon={<Box/>} href="/buttons">
+              Buttons
+            </Sidebar.MenuItem>
           </Sidebar.Menu>
         </Sidebar.Top>
 

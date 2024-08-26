@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from '@/components/layout'
 import Home from '@/pages/home'
 import Page1 from '@/pages/page-1'
+import PageButtons from '@/pages/page-buttons'
 
 import { AlyaUIProvider } from 'alya-ui'
 import 'alya-ui/styles'
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: '/page-1',
     element: (<Layout><Page1/></Layout>)
+  },
+  {
+    path: '/buttons',
+    element: (<Layout><PageButtons/></Layout>)
   }
 ])
 

@@ -12,6 +12,7 @@
 @import 'components/action-button';
 @import 'components/page';
 @import 'components/page-header';
+@import 'components/page-tabbed-header';
 @import 'components/panel-layout';
 
 :root {
@@ -161,5 +162,24 @@ body {
 
 .alya * {
   box-sizing: border-box;
+
+  font-family: fonts.$font-primary;
 }
 
+.dev {
+  display: flex;
+
+  flex-flow: column wrap;
+
+  gap: spacing.$spacing-16;
+}
+
+.dev__row {
+  display: flex;
+
+  flex-flow: row wrap;
+
+  gap: spacing.$spacing-16;
+
+  align-items: center;
+}
