@@ -169,6 +169,19 @@
   height: spacing.$spacing-22;
 }
 
+// alya-button_xl
+
+.alya-button_xl {
+  padding: spacing.$spacing-22 spacing.$spacing-18;
+
+  font-size: fonts.$font-size-20;
+}
+
+.alya-button_xl .alya-button__icon svg {
+  width: spacing.$spacing-22;
+  height: spacing.$spacing-22;
+}
+
 // alya-button_only-icon
 
 .alya-button_only-icon {
