@@ -1,251 +1,132 @@
 import React from 'react'
 
 import {
-  Page
+  Page,
+  Button,
 } from 'alya-ui'
 
-import { Box, Home } from 'lucide-react'
+import {
+  Box,
+  Home,
+  CalendarCheck,
+} from 'lucide-react'
 
 export default function TabDefaultButtons(props) {
   return (
     <>
       <div className="dev">
         <div className="dev__row">
-          <button className="alya-button alya-button_sm alya-button_uppercase">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
-          <button className="alya-button alya-button_uppercase">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
-          <button className="alya-button alya-button_lg alya-button_uppercase">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
-          <button className="alya-button alya-button_xl alya-button_uppercase">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
+          <Button size={Button.SIZE_SMALL}>Button</Button>
+          <Button size={Button.SIZE_MEDIUM}>Button</Button>
+          <Button size={Button.SIZE_LARGE}>Button</Button>
+          <Button size={Button.SIZE_EXTRA_LARGE}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_sm">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
-          <button className="alya-button">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
-          <button className="alya-button alya-button_lg">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
-          <button className="alya-button alya-button_xl">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Marcar aulas
-          </button>
+          <Button size={Button.SIZE_SMALL} uppercase={true}>Button</Button>
+          <Button size={Button.SIZE_MEDIUM} uppercase={true}>Button</Button>
+          <Button size={Button.SIZE_LARGE} uppercase={true}>Button</Button>
+          <Button size={Button.SIZE_EXTRA_LARGE} uppercase={true}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_sm">
-            Button
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button">
-            Button
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_lg">
-            Button
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_xl">
-            Button
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
+          <Button size={Button.SIZE_SMALL} uppercase={true} disabled={true}>Button</Button>
+          <Button size={Button.SIZE_MEDIUM} uppercase={true} disabled={true}>Button</Button>
+          <Button size={Button.SIZE_LARGE} uppercase={true} disabled={true}>Button</Button>
+          <Button size={Button.SIZE_EXTRA_LARGE} uppercase={true} disabled={true}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_sm">Button</button>
-          <button className="alya-button">Button</button>
-          <button className="alya-button alya-button_lg">Button</button>
-          <button className="alya-button alya-button_xl">Button</button>
+          <Button size={Button.SIZE_SMALL} icon={<CalendarCheck/>}>Button</Button>
+          <Button size={Button.SIZE_MEDIUM} icon={<CalendarCheck/>}>Button</Button>
+          <Button size={Button.SIZE_LARGE} icon={<CalendarCheck/>}>Button</Button>
+          <Button size={Button.SIZE_EXTRA_LARGE} icon={<CalendarCheck/>}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_sm" disabled>Button</button>
-          <button className="alya-button" disabled>Button</button>
-          <button className="alya-button alya-button_lg" disabled>Button</button>
-          <button className="alya-button alya-button_xl" disabled>Button</button>
+          <Button size={Button.SIZE_SMALL} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+          <Button size={Button.SIZE_MEDIUM} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+          <Button size={Button.SIZE_LARGE} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+          <Button size={Button.SIZE_EXTRA_LARGE} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_sm alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_lg alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_xl alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
+          <Button size={Button.SIZE_SMALL} icon={<CalendarCheck/>} onlyIcon={true} />
+          <Button size={Button.SIZE_MEDIUM} icon={<CalendarCheck/>} onlyIcon={true} />
+          <Button size={Button.SIZE_LARGE} icon={<CalendarCheck/>} onlyIcon={true} />
+          <Button size={Button.SIZE_EXTRA_LARGE} icon={<CalendarCheck/>} onlyIcon={true} />
         </div>
-
-
+      </div>
+      <div className="dev">
         <div className="dev__row">
-          <button className="alya-button alya-button_secondary alya-button_sm">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
-          <button className="alya-button alya-button_secondary">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
-          <button className="alya-button alya-button_secondary alya-button_lg">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
-          <button className="alya-button alya-button_secondary alya-button_xl">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-            Button
-          </button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_SMALL}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_MEDIUM}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_LARGE}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_EXTRA_LARGE}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_secondary alya-button_sm">
-            Button
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_secondary">
-            Button
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_secondary alya-button_lg">
-            Button
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_secondary alya-button_xl">
-            Button
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_SMALL} uppercase={true}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_MEDIUM} uppercase={true}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_LARGE} uppercase={true}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_EXTRA_LARGE} uppercase={true}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_secondary alya-button_sm">Button</button>
-          <button className="alya-button alya-button_secondary">Button</button>
-          <button className="alya-button alya-button_secondary alya-button_lg">Button</button>
-          <button className="alya-button alya-button_secondary alya-button_xl">Button</button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_SMALL} uppercase={true} disabled={true}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_MEDIUM} uppercase={true} disabled={true}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_LARGE} uppercase={true} disabled={true}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_EXTRA_LARGE} uppercase={true} disabled={true}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_secondary alya-button_sm" disabled>Button</button>
-          <button className="alya-button alya-button_secondary" disabled>Button</button>
-          <button className="alya-button alya-button_secondary alya-button_lg" disabled>Button</button>
-          <button className="alya-button alya-button_secondary alya-button_xl" disabled>Button</button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_SMALL} icon={<CalendarCheck/>}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_MEDIUM} icon={<CalendarCheck/>}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_LARGE} icon={<CalendarCheck/>}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_EXTRA_LARGE} icon={<CalendarCheck/>}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_secondary alya-button_sm alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_secondary alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_secondary alya-button_lg alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_secondary alya-button_xl alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-        </div>
-
-        <div className="dev__row">
-          <button className="alya-button alya-button_tertiary alya-button_sm">Button</button>
-          <button className="alya-button alya-button_tertiary">Button</button>
-          <button className="alya-button alya-button_tertiary alya-button_lg">Button</button>
-          <button className="alya-button alya-button_tertiary alya-button_xl">Button</button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_SMALL} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_MEDIUM} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_LARGE} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_EXTRA_LARGE} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_tertiary alya-button_sm" disabled>Button</button>
-          <button className="alya-button alya-button_tertiary" disabled>Button</button>
-          <button className="alya-button alya-button_tertiary alya-button_lg" disabled>Button</button>
-          <button className="alya-button alya-button_tertiary alya-button_xl" disabled>Button</button>
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_SMALL} icon={<CalendarCheck/>} onlyIcon={true} />
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_MEDIUM} icon={<CalendarCheck/>} onlyIcon={true} />
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_LARGE} icon={<CalendarCheck/>} onlyIcon={true} />
+          <Button variant={Button.VARIANT_SECONDARY} size={Button.SIZE_EXTRA_LARGE} icon={<CalendarCheck/>} onlyIcon={true} />
+        </div>
+      </div>
+      <div className="dev">
+        <div className="dev__row">
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_SMALL}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_MEDIUM}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_LARGE}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_EXTRA_LARGE}>Button</Button>
         </div>
         <div className="dev__row">
-          <button className="alya-button alya-button_tertiary alya-button_sm alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_tertiary alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_tertiary alya-button_lg alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
-          <button className="alya-button alya-button_tertiary alya-button_xl alya-button_only-icon">
-            <div className="alya-button__icon">
-              <Home/>
-            </div>
-          </button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_SMALL} uppercase={true}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_MEDIUM} uppercase={true}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_LARGE} uppercase={true}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_EXTRA_LARGE} uppercase={true}>Button</Button>
         </div>
-
+        <div className="dev__row">
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_SMALL} uppercase={true} disabled={true}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_MEDIUM} uppercase={true} disabled={true}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_LARGE} uppercase={true} disabled={true}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_EXTRA_LARGE} uppercase={true} disabled={true}>Button</Button>
+        </div>
+        <div className="dev__row">
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_SMALL} icon={<CalendarCheck/>}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_MEDIUM} icon={<CalendarCheck/>}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_LARGE} icon={<CalendarCheck/>}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_EXTRA_LARGE} icon={<CalendarCheck/>}>Button</Button>
+        </div>
+        <div className="dev__row">
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_SMALL} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_MEDIUM} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_LARGE} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_EXTRA_LARGE} icon={<CalendarCheck/>} iconSide={Button.ICON_RIGHT}>Button</Button>
+        </div>
+        <div className="dev__row">
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_SMALL} icon={<CalendarCheck/>} onlyIcon={true} />
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_MEDIUM} icon={<CalendarCheck/>} onlyIcon={true} />
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_LARGE} icon={<CalendarCheck/>} onlyIcon={true} />
+          <Button variant={Button.VARIANT_TERTIARY} size={Button.SIZE_EXTRA_LARGE} icon={<CalendarCheck/>} onlyIcon={true} />
+        </div>
       </div>
     </>
   )

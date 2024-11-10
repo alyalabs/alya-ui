@@ -1,22 +1,26 @@
 import React, { useState, useEffect, forwardRef } from 'react'
 import clsx from 'clsx'
 
-const VARIANT_ONE = 'one'
-const VARIANT_TWO = 'two'
-const VARIANT_THREE = 'three'
-const VARIANT_FOUR = 'four'
+const VARIANT_PRIMARY = ''
+const VARIANT_SECONDARY = 'secondary'
+const VARIANT_TERTIARY = 'tertiary'
 
-const SIZE_SMALL = 'small'
+const ICON_LEFT = 'left'
+const ICON_RIGHT = 'right'
+const ONLY_ICON = 'only-icon'
 
-const ICON_SIDE_LEFT = 'left'
-const ICON_SIDE_RIGHT = 'right'
+const SIZE_SMALL = 'sm'
+const SIZE_MEDIUM = 'md'
+const SIZE_LARGE = 'lg'
+const SIZE_EXTRA_LARGE = 'xl'
 
 const Button = forwardRef(function ({
-  variant = VARIANT_ONE,
+  variant = VARIANT_PRIMARY,
   size,
+  uppercase = false,
   icon,
-  iconSide = ICON_SIDE_LEFT,
-  onlyIcon,
+  iconSide = ICON_LEFT,
+  onlyIcon = false,
   className,
   children,
   ...props
@@ -33,7 +37,7 @@ const Button = forwardRef(function ({
   }
 
   function renderIconLeft() {
-    if (icon && iconSide === 'left') {
+    if (!onlyIcon && icon && iconSide === 'left') {
       return (
         <div className="alya-button__icon alya-button__icon--left">
           {icon}
@@ -43,7 +47,7 @@ const Button = forwardRef(function ({
   }
 
   function renderIconRight() {
-    if (icon && iconSide === 'right') {
+    if (!onlyIcon && icon && iconSide === 'right') {
       return (
         <div className="alya-button__icon alya-button__icon--right">
           {icon}
@@ -58,37 +62,44 @@ const Button = forwardRef(function ({
       className={clsx(
         'alya-button',
         {
-          'alya-button--one': variant === VARIANT_ONE,
-          'alya-button--two': variant === VARIANT_TWO,
-          'alya-button--three': variant === VARIANT_THREE,
-          'alya-button--four': variant === VARIANT_FOUR,
+          'alya-button_secondary': variant === VARIANT_SECONDARY,
+          'alya-button_tertiary': variant === VARIANT_TERTIARY,
         },
         {
-          'alya-button--small': size === SIZE_SMALL,
+          'alya-button_sm': size === SIZE_SMALL,
+          'alya-button_lg': size === SIZE_LARGE,
+          'alya-button_xl': size === SIZE_EXTRA_LARGE,
         },
         {
-          'alya-button--only-icon': onlyIcon,
+          'alya-button_uppercase': uppercase,
+        },
+        {
+          'alya-button_only-icon': onlyIcon,
         },
         className
       )}
       ref={ref}
     >
       {renderIconLeft()}
+
       {renderOnlyIcon()}
+
       {children}
+
       {renderIconRight()}
     </button>
   )
 })
 
 export default Object.assign(Button, {
-  VARIANT_ONE,
-  VARIANT_TWO,
-  VARIANT_THREE,
-  VARIANT_FOUR,
+  VARIANT_SECONDARY,
+  VARIANT_TERTIARY,
+
+  ICON_LEFT,
+  ICON_RIGHT,
+  ONLY_ICON,
 
   SIZE_SMALL,
-
-  ICON_SIDE_LEFT,
-  ICON_SIDE_RIGHT,
+  SIZE_LARGE,
+  SIZE_EXTRA_LARGE,
 })
