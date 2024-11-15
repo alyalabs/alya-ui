@@ -10,6 +10,10 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       svgr(),
+      dts({
+        insertTypesEntry: true,
+        rollupTypes: true,
+      }),
     ],
     
     resolve: {
@@ -22,7 +26,7 @@ export default defineConfig(({ mode }) => {
       minify: true,
 
       lib: {
-        entry: fileURLToPath(new URL('src/index.js', import.meta.url)),
+        entry: fileURLToPath(new URL('src/index.ts', import.meta.url)),
         name: 'index',
         fileName: 'index',
         formats: ['es'],

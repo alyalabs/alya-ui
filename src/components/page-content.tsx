@@ -3,7 +3,11 @@ import clsx from 'clsx'
 
 const PADDING_ZERO = 'alya-page__content__padding-zero'
 
-const PageContent = forwardRef(function ({
+type PageContentProps = React.ComponentProps<'div'> & {
+  padding?: boolean
+}
+
+const PageContent = forwardRef<HTMLDivElement, PageContentProps>(function ({
   padding,
 
   className,

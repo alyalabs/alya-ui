@@ -6,8 +6,24 @@ import {
 } from '@/context/alya-ui-context'
 
 import { ArrowLeft } from 'lucide-react'
-''
-const PageTabbedHeader = forwardRef(function ({
+
+type PageTabbedHeaderProps = React.ComponentPropsWithoutRef<'div'> & {
+  tabs: {
+    name: string
+    component: React.ComponentType
+    props?: any
+  }[]
+  currentTab: number
+  changeTab: (tab: number) => void
+  updateTab: (tab: number) => void
+
+  showBackButton?: boolean
+  small?: boolean
+
+  onBackButtonClick?: React.MouseEventHandler
+}
+
+const PageTabbedHeader = forwardRef<HTMLDivElement, PageTabbedHeaderProps>(function ({
   tabs,
   currentTab,
   changeTab,

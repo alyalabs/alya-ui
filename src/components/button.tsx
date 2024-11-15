@@ -14,7 +14,16 @@ const SIZE_MEDIUM = 'md'
 const SIZE_LARGE = 'lg'
 const SIZE_EXTRA_LARGE = 'xl'
 
-const Button = forwardRef(function ({
+type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
+  variant?: typeof VARIANT_PRIMARY | typeof VARIANT_SECONDARY | typeof VARIANT_TERTIARY
+  size?: typeof SIZE_SMALL | typeof SIZE_MEDIUM | typeof SIZE_LARGE | typeof SIZE_EXTRA_LARGE
+  uppercase?: boolean
+  icon?: React.ReactNode
+  iconSide?: typeof ICON_LEFT | typeof ICON_RIGHT
+  onlyIcon?: boolean
+}
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ({
   variant = VARIANT_PRIMARY,
   size,
   uppercase = false,

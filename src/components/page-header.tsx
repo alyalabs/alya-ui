@@ -7,7 +7,13 @@ import {
 
 import { ArrowLeft } from 'lucide-react'
 
-const PageHeader = forwardRef(function ({
+type PageHeaderProps = React.ComponentProps<'header'> & {
+  showBackButton?: boolean
+  small?: boolean
+  onBackButtonClick?: React.MouseEventHandler
+}
+
+const PageHeader = forwardRef<HTMLDivElement, PageHeaderProps>(function ({
   showBackButton = false,
   small = false,
   

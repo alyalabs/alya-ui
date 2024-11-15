@@ -1,7 +1,9 @@
 import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 
-const PageSubtitle = forwardRef(function ({
+type PageSubtitleProps = React.ComponentPropsWithoutRef<'h2'>
+
+const PageSubtitle = forwardRef<HTMLHeadingElement, PageSubtitleProps>(function ({
   className,
   children,
   ...props

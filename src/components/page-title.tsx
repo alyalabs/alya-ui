@@ -1,7 +1,9 @@
 import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 
-const PageTitle = forwardRef(function ({
+type PageTitleProps = React.HTMLAttributes<HTMLHeadingElement>
+
+const PageTitle = forwardRef<HTMLHeadingElement, PageTitleProps>(function ({
   className,
   children,
   ...props

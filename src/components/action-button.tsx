@@ -4,7 +4,12 @@ import clsx from 'clsx'
 const VARIANT_ONE = 'one'
 const VARIANT_TWO = 'two'
 
-const ActionButton = forwardRef(function ({
+type ActionButtonProps = React.ComponentPropsWithoutRef<'button'> & {
+  variant?: typeof VARIANT_ONE | typeof VARIANT_TWO
+  icon?: React.ReactNode
+}
+
+const ActionButton = forwardRef<HTMLButtonElement, ActionButtonProps>(function ({
   variant = VARIANT_ONE,
   icon,
   className,

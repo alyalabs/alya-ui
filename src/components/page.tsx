@@ -11,7 +11,9 @@ import PageTitle from '@/components/page-title'
 import PageSubtitle from '@/components/page-subtitle'
 import PageContent from '@/components/page-content'
 
-const Page = forwardRef(function ({
+type PageProps = React.ComponentPropsWithoutRef<'div'>
+
+const Page = forwardRef<HTMLDivElement, PageProps>(function ({
   className,
   children,
   ...props
