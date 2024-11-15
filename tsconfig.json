@@ -3,7 +3,10 @@
 
   "compilerOptions": {
     "rootDir": "src",
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
 
   "include": ["src/**/*"]

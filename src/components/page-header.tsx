@@ -13,7 +13,7 @@ type PageHeaderProps = React.ComponentProps<'header'> & {
   onBackButtonClick?: React.MouseEventHandler
 }
 
-const PageHeader = forwardRef<HTMLDivElement, PageHeaderProps>(function ({
+const PageHeader = forwardRef<HTMLElement, PageHeaderProps>(function ({
   showBackButton = false,
   small = false,
   
@@ -25,7 +25,7 @@ const PageHeader = forwardRef<HTMLDivElement, PageHeaderProps>(function ({
 }, ref) {
   const { page } = useAlyaUI()
 
-  function handleBackButtonClick(event) {
+  function handleBackButtonClick(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     if (onBackButtonClick instanceof Function) {
       onBackButtonClick(event)
     }

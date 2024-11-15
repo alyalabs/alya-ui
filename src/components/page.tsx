@@ -11,7 +11,7 @@ import PageTitle from '@/components/page-title'
 import PageSubtitle from '@/components/page-subtitle'
 import PageContent from '@/components/page-content'
 
-type PageProps = React.ComponentPropsWithoutRef<'div'>
+type PageProps = React.ComponentProps<typeof motion.div>
 
 const Page = forwardRef<HTMLDivElement, PageProps>(function ({
   className,

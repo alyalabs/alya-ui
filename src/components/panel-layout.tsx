@@ -4,7 +4,9 @@ import clsx from 'clsx'
 
 import fadeVariants from '@/animations/fade-variants'
 
-const PanelLayout = forwardRef(function ({
+type PanelLayoutProps = React.ComponentProps<typeof motion.div>
+
+const PanelLayout = forwardRef<HTMLDivElement, PanelLayoutProps>(function ({
   className,
   children,
   ...props

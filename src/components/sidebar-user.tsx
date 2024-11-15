@@ -1,7 +1,15 @@
 import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 
-const SidebarUser = forwardRef(function ({
+type SidebarUserProps = React.ComponentPropsWithoutRef<'div'> & {
+  user: {
+    name: string
+    username: string
+    picture: string
+  }
+}
+
+const SidebarUser = forwardRef<HTMLDivElement, SidebarUserProps>(function ({
   user = {},
   className,
   children,

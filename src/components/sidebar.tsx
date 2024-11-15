@@ -10,7 +10,9 @@ import SidebarMenuItem from '@/components/sidebar-menu-item'
 import SidebarUser from '@/components/sidebar-user'
 import SidebarTitle from '@/components/sidebar-title'
 
-const Sidebar = forwardRef(function ({
+type SidebarProps = React.ComponentPropsWithoutRef<'nav'>
+
+const Sidebar = forwardRef<HTMLElement, SidebarProps>(function ({
   className,
   children,
   ...props

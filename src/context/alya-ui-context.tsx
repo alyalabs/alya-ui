@@ -1,11 +1,37 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 
-const defaultValue = {}
+type Page = {
+  title: string,
+  subtitle: string,
+  description: string,
+  indicator: string,
+  buttons: any[],
+}
 
-const AlyaUIContext = createContext(defaultValue)
+type AlyaUIProviderProps = React.PropsWithChildren
 
-export function AlyaUIProvider(props) {
-  const pageInitialState = {
+type AlyaUIContext = {
+  page: Page,
+  setPage: (obj: Page) => void,
+  updatePage: (obj: Page) => void,
+}
+
+const defaultValue: AlyaUIContext = {
+  page: {
+    title: '',
+    subtitle: '',
+    description: '',
+    indicator: '',
+    buttons: [],
+  },
+  setPage: () => {},
+  updatePage: () => {},
+}
+
+const AlyaUIContext = createContext<AlyaUIContext>(defaultValue)
+
+export function AlyaUIProvider(props: AlyaUIProviderProps) {
+  const pageInitialState: Page = {
     title: '',
     subtitle: '',
     description: '',
@@ -19,14 +45,14 @@ export function AlyaUIProvider(props) {
     <AlyaUIContext.Provider value={{
       page: page,
 
-      setPage(obj) {
+      setPage(obj: Page) {
         setPage({
           ...pageInitialState,
           ...obj
         })
       },
 
-      updatePage(obj) {
+      updatePage(obj: Page) {
         setPage((page) => ({
           ...page,
             ...obj
@@ -48,7 +74,7 @@ export function useAlyaUI() {
   return useAlyaUIContext()
 }
 
-export function usePage(props) {
+export function usePage(props: Page) {
   const { page, setPage } = useAlyaUIContext()
 
   useEffect(() => {

@@ -1,7 +1,9 @@
 import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 
-const SidebarFooter = forwardRef(function ({
+type SidebarFooterProps = React.ComponentPropsWithoutRef<'footer'>
+
+const SidebarFooter = forwardRef<HTMLElement, SidebarFooterProps>(function ({
   className,
   children,
   ...props

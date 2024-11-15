@@ -23,7 +23,7 @@ type PageTabbedHeaderProps = React.ComponentPropsWithoutRef<'div'> & {
   onBackButtonClick?: React.MouseEventHandler
 }
 
-const PageTabbedHeader = forwardRef<HTMLDivElement, PageTabbedHeaderProps>(function ({
+const PageTabbedHeader = forwardRef<HTMLElement, PageTabbedHeaderProps>(function ({
   tabs,
   currentTab,
   changeTab,
@@ -44,7 +44,7 @@ const PageTabbedHeader = forwardRef<HTMLDivElement, PageTabbedHeaderProps>(funct
     console.log(tabs, currentTab)
   }, [])
 
-  function handleBackButtonClick(event) {
+  function handleBackButtonClick(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     if (onBackButtonClick instanceof Function) {
       onBackButtonClick(event)
     }

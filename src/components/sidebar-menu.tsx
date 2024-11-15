@@ -1,7 +1,9 @@
 import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 
-const SidebarMenu = forwardRef(function ({
+type SidebarMenuProps = React.ComponentPropsWithoutRef<'ul'>
+
+const SidebarMenu = forwardRef<HTMLUListElement, SidebarMenuProps>(function ({
   className,
   children,
   ...props

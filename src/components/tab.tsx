@@ -1,7 +1,18 @@
 import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 
-const Tab = forwardRef(function ({
+type TabProps = React.ComponentPropsWithoutRef<'div'> & {
+  tabs: {
+    name: string
+    component: React.ComponentType
+    props?: any
+  }[]
+  currentTab: number
+  changeTab: (tab: number) => void
+  updateTab: (tab: number) => void
+}
+
+const Tab = forwardRef<HTMLDivElement, TabProps>(function ({
   tabs,
   currentTab,
   changeTab,

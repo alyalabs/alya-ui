@@ -1,7 +1,9 @@
 import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 
-const SidebarTop = forwardRef(function ({
+type SidebarTopProps = React.ComponentPropsWithoutRef<'div'>
+
+const SidebarTop = forwardRef<HTMLDivElement, SidebarTopProps>(function ({
   className,
   children,
   ...props

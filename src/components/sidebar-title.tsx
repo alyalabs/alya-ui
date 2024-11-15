@@ -1,7 +1,9 @@
 import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 
-const SidebarTitle = forwardRef(function ({
+type SidebarTitleProps = React.ComponentPropsWithoutRef<'h2'>
+
+const SidebarTitle = forwardRef<HTMLHeadingElement, SidebarTitleProps>(function ({
   className,
   children,
   ...props

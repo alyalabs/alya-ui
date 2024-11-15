@@ -1,46 +1,67 @@
 import React, { useState, useEffect } from 'react'
 
-export default function useTabs(arr = []) {
-  const [tabs, setTabs] = useState(arr)
-  const [currentTab, setCurrentTab] = useState(0)
+type Tab = {
+  label: string
+  props?: Record<string, any>
+}
+
+type UseTabsReturn = {
+  tabs: Tab[]
+  currentTab: number
+  changeTab: (index: number, props?: Record<string, any>) => void
+  updateTab: (index: number, props: Record<string, any>) => void
+}
+
+export default function useTabs(arr: Tab[] = []): UseTabsReturn {
+  const [tabs, setTabs] = useState<Tab[]>(arr)
+  const [currentTab, setCurrentTab] = useState<number>(0)
 
   useEffect(() => {
     setTabs(arr)
   }, [arr])
 
-  function changeTab(index, props = {}) {
+  function changeTab(index: number, props: Record<string, any> = {}) {
     if (props) {
-      setTabs((tabs) => tabs.map((tab, i) => {
-        if (i === index) return {
-          ...tab,
-          props: {
-            ...tab.props || {},
-            ...props
-          }
-        }
+      setTabs((tabs) =>
+        tabs.map((tab, i) => {
+          if (i === index)
+            return {
+              ...tab,
+              props: {
+                ...tab.props,
+                ...props,
+              },
+            }
 
-        return tab
-      }))
+          return tab
+        })
+      )
     }
 
     setCurrentTab(index)
   }
 
-  function updateTab(index, props) {
-    setTabs((tabs) => tabs.map((tab, i) => {
-      if (i === index) return {
-        ...tab,
-        props: {
-          ...tab.props || {},
-          ...props
-        }
-      }
+  function updateTab(index: number, props: Record<string, any>) {
+    setTabs((tabs) =>
+      tabs.map((tab, i) => {
+        if (i === index)
+          return {
+            ...tab,
+            props: {
+              ...tab.props,
+              ...props,
+            },
+          }
 
-      return tab
-    }))
+        return tab
+      })
+    )
   }
 
   return {
-    tabs, currentTab, changeTab, updateTab
+    tabs,
+    currentTab,
+    changeTab,
+    updateTab
   }
 }

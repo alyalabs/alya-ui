@@ -2,7 +2,12 @@ import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
 
-const SidebarMenuItem = forwardRef(function ({
+type SidebarMenuItemProps = React.ComponentPropsWithoutRef<'li'> & {
+  href?: string
+  icon?: React.ReactNode
+}
+
+const SidebarMenuItem = forwardRef<HTMLLIElement, SidebarMenuItemProps>(function ({
   href,
   icon,
   className,

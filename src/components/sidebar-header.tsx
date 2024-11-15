@@ -1,7 +1,9 @@
 import React, {forwardRef} from 'react'
 import clsx from 'clsx'
 
-const SidebarHeader = forwardRef(function ({
+type SidebarHeaderProps = React.ComponentPropsWithoutRef<'header'>
+
+const SidebarHeader = forwardRef<HTMLElement, SidebarHeaderProps>(function ({
   className,
   children,
   ...props
