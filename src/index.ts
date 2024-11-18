@@ -16,6 +16,7 @@ import PageHeader from '@/components/page-header'
 import Page from '@/components/page'
 import PanelLayout from '@/components/panel-layout'
 import Tab from '@/components/tab'
+import TextInput from '@/components/text-input'
 
 export {
   AlyaUIProvider,
@@ -30,5 +31,6 @@ export {
   Page,
   PanelLayout,
   Tab,
+  TextInput,
 }
 

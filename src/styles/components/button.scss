@@ -8,11 +8,11 @@
 @use '../utilities';
 
 @include themes.push('default', (
-  'button-text-color': colors.$color-gray-600,
+  'button-text-color': colors.$color-gray-700,
   'button-bg-color': colors.$color-white,
   'button-border-color': colors.$color-gray-200,
 
-  'button-text-color-hover': colors.$color-gray-600,
+  'button-text-color-hover': colors.$color-gray-700,
   'button-bg-color-hover': colors.$color-white,
   'button-border-color-hover': colors.$color-gray-300,
 
@@ -34,15 +34,15 @@
   'button-secondary-border-color-disabled': colors.$color-secondary,
 
 
-  'button-tertiary-text-color': colors.$color-gray-600,
+  'button-tertiary-text-color': colors.$color-gray-700,
   'button-tertiary-bg-color': transparent,
   'button-tertiary-border-color': transparent,
 
-  'button-tertiary-text-color-hover': colors.$color-gray-600,
+  'button-tertiary-text-color-hover': colors.$color-gray-700,
   'button-tertiary-bg-color-hover': colors.$color-gray-200,
   'button-tertiary-border-color-hover': colors.$color-gray-200,
 
-  'button-tertiary-text-color-disabled': colors.$color-gray-500,
+  'button-tertiary-text-color-disabled': colors.$color-gray-600,
   'button-tertiary-bg-color-disabled': transparent,
   'button-tertiary-border-color-disabled': transparent,
 
@@ -60,7 +60,7 @@
   align-items: center;
   justify-content: center;
 
-  padding: spacing.$spacing-12 spacing.$spacing-16;
+  padding: spacing.$spacing-12 spacing.$spacing-14;
   margin: 0;
 
   font-size: fonts.$font-size-16;
@@ -70,7 +70,7 @@
   cursor: pointer;
 
   border: none;
-  border-radius: borders.$border-radius-md;
+  border-radius: borders.$border-radius-sm;
 
   transition: all motion.$motion-duration-ultra-fast motion.$motion-easing-linear;
 
@@ -96,8 +96,8 @@
 .alya-button__icon svg {
   display: block;
 
-  width: spacing.$spacing-20;
-  height: spacing.$spacing-20;
+  width: spacing.$spacing-18;
+  height: spacing.$spacing-18;
 }
 
 .alya-button__icon_left {
@@ -152,21 +152,21 @@
 }
 
 .alya-button_sm .alya-button__icon svg {
-  width: spacing.$spacing-18;
-  height: spacing.$spacing-18;
+  width: spacing.$spacing-16;
+  height: spacing.$spacing-16;
 }
 
 // alya-button_lg
 
 .alya-button_lg {
-  padding: spacing.$spacing-14 spacing.$spacing-18;
+  padding: spacing.$spacing-14 spacing.$spacing-16;
 
   font-size: fonts.$font-size-18;
 }
 
 .alya-button_lg .alya-button__icon svg {
-  width: spacing.$spacing-22;
-  height: spacing.$spacing-22;
+  width: spacing.$spacing-20;
+  height: spacing.$spacing-20;
 }
 
 // alya-button_xl
@@ -178,8 +178,8 @@
 }
 
 .alya-button_xl .alya-button__icon svg {
-  width: spacing.$spacing-22;
-  height: spacing.$spacing-22;
+  width: spacing.$spacing-20;
+  height: spacing.$spacing-20;
 }
 
 // alya-button_only-icon

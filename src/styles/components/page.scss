@@ -10,9 +10,9 @@
 @include themes.push('default', (
   'page-bg-color': colors.$color-gray-100,
 
-  'page-title-text-color': colors.$color-gray-600,
+  'page-title-text-color': colors.$color-gray-700,
 
-  'page-subtitle-text-color': colors.$color-gray-600,
+  'page-subtitle-text-color': colors.$color-gray-700,
 ));
 
 .alya-page {

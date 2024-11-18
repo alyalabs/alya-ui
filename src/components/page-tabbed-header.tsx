@@ -7,6 +7,10 @@ import {
 
 import { ArrowLeft } from 'lucide-react'
 
+import {
+  FiArrowLeft
+} from 'react-icons/fi'
+
 type PageTabbedHeaderProps = React.ComponentPropsWithoutRef<'div'> & {
   tabs: {
     name: string
@@ -54,7 +58,7 @@ const PageTabbedHeader = forwardRef<HTMLElement, PageTabbedHeaderProps>(function
     if (showBackButton) {
       return (
         <button className="alya-page-tabbed-header__back-button" onClick={handleBackButtonClick}>
-          <ArrowLeft/>
+          <FiArrowLeft/>
         </button>
       )
     }

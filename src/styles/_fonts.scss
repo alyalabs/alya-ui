@@ -1,5 +1,11 @@
 @use 'utilities';
 
+@font-face {
+  font-family: 'geist';
+  src: url('@/fonts/geist/geist-wght.woff2') format('woff2');
+  font-weight: 100 900;
+}
+
 $font-primary: 'Figtree', sans-serif;
 $font-secondary: 'myriad-pro', 'Myriad Pro', sans-serif;
 
@@ -23,6 +29,7 @@ $font-size-76: utilities.to-rem(76px);
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
+$font-weight-meidium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 

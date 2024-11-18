@@ -28,16 +28,19 @@
     "prebuild": "rimraf dist",
     "build": "npx vite build",
     "watch": "npx vite build -w",
-    "dev": "npx vite build --watch --outDir ./examples/javascript/node_modules/alya-ui/dist",
+    "dev": "npx vite build --watch --outDir ./examples/typescript/node_modules/alya-ui/dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@geist-ui/icons": "^1.0.2",
+    "alya-forms": "file:../alya-forms",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.13",
     "lucide-react": "^0.408.0",
+    "nanoid": "^5.0.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0",
     "react-router-dom": "^6.24.1"
   },
   "devDependencies": {

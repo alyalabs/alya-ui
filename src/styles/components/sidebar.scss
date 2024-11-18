@@ -11,10 +11,10 @@
   'sidebar-bg-color': colors.$color-white,
   'sidebar-border-color': colors.$color-gray-200,
 
-  'sidebar-menu-item-text-color': colors.$color-gray-600,
+  'sidebar-menu-item-text-color': colors.$color-gray-700,
   'sidebar-menu-item-bg-color': transparent,
 
-  'sidebar-menu-item-text-color-hover': colors.$color-gray-600,
+  'sidebar-menu-item-text-color-hover': colors.$color-gray-700,
   'sidebar-menu-item-bg-color-hover': colors.$color-primary-100,
   
   'sidebar-menu-item-text-color-active': colors.$color-white,
@@ -23,8 +23,8 @@
   'sidebar-user-bg-color': transparent,
   'sidebar-user-bg-color-hover': colors.$color-primary-100,
   
-  'sidebar-user-name-text-color': colors.$color-gray-600,
-  'sidebar-user-username-text-color': colors.$color-gray-500,
+  'sidebar-user-name-text-color': colors.$color-gray-700,
+  'sidebar-user-username-text-color': colors.$color-gray-600,
 
   'sidebar-user-picture-border-color': colors.$color-primary,
   'sidebar-user-picture-border-color-hover': colors.$color-primary-100,
@@ -69,7 +69,7 @@
   font-size: fonts.$font-size-18;
   font-weight: fonts.$font-weight-semibold;
 
-  border-radius: borders.$border-radius-md;
+  border-radius: borders.$border-radius-sm;
 
   @include themes.apply {
     color: themes.get('sidebar-title-text-color');
@@ -83,7 +83,7 @@
 
   flex-flow: column nowrap;
 
-  gap: spacing.$spacing-6;
+  gap: spacing.$spacing-4;
 
   align-items: center;
 
@@ -108,13 +108,13 @@
   align-items: center;
 
   width: 100%;
-  padding: spacing.$spacing-8 spacing.$spacing-12;
+  padding: spacing.$spacing-10 spacing.$spacing-12;
 
   font-size: fonts.$font-size-16;
   font-weight: fonts.$font-weight-semibold;
   text-decoration: none;
 
-  border-radius: borders.$border-radius-md;
+  border-radius: borders.$border-radius-sm;
 
   transition: all motion.$motion-duration-ultra-fast motion.$motion-easing-linear;
 
@@ -147,6 +147,8 @@
 
   align-items: center;
 
+  height: spacing.$spacing-18;
+
   margin-right: spacing.$spacing-8;
 }
 
@@ -170,7 +172,7 @@
 
   cursor: pointer;
 
-  border-radius: borders.$border-radius-md;
+  border-radius: borders.$border-radius-sm;
 
   transition: all motion.$motion-duration-ultra-fast motion.$motion-easing-linear;
 

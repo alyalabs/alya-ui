@@ -9,10 +9,10 @@
 
 @include themes.push('default', (
   'page-header-bg-color': transparent,
-  'page-header-title-text-color': colors.$color-gray-600,
-  'page-header-subtitle-text-color': colors.$color-gray-600,
-  'page-header-description-text-color': colors.$color-gray-600,
-  'page-header-back-button-color': colors.$color-gray-600,
+  'page-header-title-text-color': colors.$color-gray-700,
+  'page-header-subtitle-text-color': colors.$color-gray-700,
+  'page-header-description-text-color': colors.$color-gray-700,
+  'page-header-back-button-color': colors.$color-gray-700,
 
   'page-header-small-bg-color': colors.$color-white,
   'page-header-small-border-bottom-color': colors.$color-gray-200,
@@ -89,7 +89,7 @@
   width: auto;
   height: 26px;
 
-  stroke-width: 4px;
+  stroke-width: 3px;
   
   @include themes.apply {
     stroke: themes.get('page-header-back-button-color');

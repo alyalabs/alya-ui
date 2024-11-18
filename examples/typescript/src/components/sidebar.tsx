@@ -1,0 +1,51 @@
+import React from 'react'
+
+import { Sidebar } from 'alya-ui'
+
+import {
+  Home,
+  Box,
+  Folder,
+  Type,
+  MousePointerClick
+} from 'lucide-react'
+
+import user_placeholder from '@/assets/img/user_placeholder.png'
+import carlos from '@/assets/img/carlos.png'
+
+export default function AppSidebar() {
+  return (
+    <Sidebar>
+      <Sidebar.Top>
+          <Sidebar.Header>
+            <Sidebar.Title>Example Application</Sidebar.Title>
+          </Sidebar.Header>
+
+          <Sidebar.Menu>
+            <Sidebar.MenuItem icon={<Home/>} href="/">
+              Home
+            </Sidebar.MenuItem>
+            <Sidebar.MenuItem icon={<Folder/>} href="/page-1">
+              Tabs
+            </Sidebar.MenuItem>
+            <Sidebar.MenuItem icon={<MousePointerClick/>} href="/buttons">
+              Buttons
+            </Sidebar.MenuItem>
+            <Sidebar.MenuItem icon={<Type/>} href="/inputs">
+              Inputs
+            </Sidebar.MenuItem>
+          </Sidebar.Menu>
+        </Sidebar.Top>
+
+        <Sidebar.Bottom>
+          <Sidebar.Footer>
+            <Sidebar.User user={{
+              name: 'Carlos Eduardo',
+              username: 'carlosedba',
+              picture: carlos
+            }}/>
+          </Sidebar.Footer>
+        </Sidebar.Bottom>
+    </Sidebar>
+  )
+}

@@ -9,10 +9,10 @@
 
 @include themes.push('default', (
   'page-tabbed-header-bg-color': transparent,
-  'page-tabbed-header-title-text-color': colors.$color-gray-600,
-  'page-tabbed-header-subtitle-text-color': colors.$color-gray-600,
-  'page-tabbed-header-description-text-color': colors.$color-gray-600,
-  'page-tabbed-header-back-button-color': colors.$color-gray-600,
+  'page-tabbed-header-title-text-color': colors.$color-gray-700,
+  'page-tabbed-header-subtitle-text-color': colors.$color-gray-700,
+  'page-tabbed-header-description-text-color': colors.$color-gray-700,
+  'page-tabbed-header-back-button-color': colors.$color-gray-700,
 
   'page-tabbed-header-tab-bg-color-hover': colors.$color-gray-300,
   'page-tabbed-header-tab-active-after-bg-color': colors.$color-secondary,
@@ -83,7 +83,7 @@
   width: auto;
   height: 26px;
 
-  stroke-width: 4px;
+  stroke-width: 3px;
   
   @include themes.apply {
     stroke: themes.get('page-tabbed-header-back-button-color');

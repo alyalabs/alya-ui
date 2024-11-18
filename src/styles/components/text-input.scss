@@ -1,0 +1,45 @@
+@use '../borders';
+@use '../colors';
+@use '../fonts';
+@use '../layers';
+@use '../motion';
+@use '../spacing';
+@use '../themes';
+@use '../utilities';
+
+@include themes.push('default', (
+));
+
+.alya-text-input {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+
+.alya-text-input__label {
+  margin: 0 0 spacing.$spacing-4 spacing.$spacing-4;
+  color: colors.$color-gray-400;
+  font-size: fonts.$font-size-14;
+  font-weight: fonts.$font-weight-meidium;
+}
+
+.alya-text-input__input-container {
+  position: relative;
+  width: 100%;
+}
+
+.alya-text-input__input {
+  display: block;
+  padding: spacing.$spacing-12;
+  border-radius: borders.$border-radius-sm;
+  border: borders.$border-width-sm solid colors.$color-gray-200;
+  background-color: colors.$color-white;
+  font-size: fonts.$font-size-16;
+  outline: none;
+}
+
+.alya-text-input__input:focus {
+  border-color: colors.$color-gray-300;
+}

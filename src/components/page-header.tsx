@@ -7,6 +7,14 @@ import {
 
 import { ArrowLeft } from 'lucide-react'
 
+import {
+  HiArrowLeft
+} from 'react-icons/hi'
+
+import {
+  FiArrowLeft
+} from 'react-icons/fi'
+
 type PageHeaderProps = React.ComponentProps<'header'> & {
   showBackButton?: boolean
   small?: boolean
@@ -35,7 +43,7 @@ const PageHeader = forwardRef<HTMLElement, PageHeaderProps>(function ({
     if (showBackButton) {
       return (
         <button className="alya-page-header__back-button" onClick={handleBackButtonClick}>
-          <ArrowLeft/>
+          <FiArrowLeft/>
         </button>
       )
     }
